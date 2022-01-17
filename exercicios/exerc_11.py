@@ -3,6 +3,7 @@
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
 # Exercicio # 11 a) b)
+# Usar cifra de ceasar
 
 
 
@@ -35,74 +36,89 @@ b. Descubra a mensagem original tendo como fonte o seguinte criptograma:
 “fdrijrcxrufhlrekfufkvljrcjrfcrxizdrjuvgfiklxrcgfikvtilqridfjhlrekrjdrvjtyfirirdhlrekfjwzcyfjvdmrfivqrirdhlrekrjefzmrjwztrirdgfitrjrigrirhlvwfjjvjefjjffdrimrcvlrgverklufmrcvrgverjvrrcdrerfvgvhlverhlvdhlvigrjjrircvdufsfarufikvdhlvgrjjrircvdurufiuvljrfdrifgvizxfvfrszjdfuvldrjevcvvhlvvjgvcyflftvl”
 
 R:
-Posicao 25
+"omarsalgadoquantodoteusalsaolagrimasdeportugalportecruzarmosquantasmaeschoraramquantosfilhosemvaorezaramquantasnoivasficaramporcasarparaquefossesnossoomarvaleuapenatudovaleapenaseaalmanaoepequenaquemquerpassaralemdobojadortemquepassaralemdadordeusaomaroperigoeoabismodeumasneleequeespelhouoceu"
 """
+
+""" INICIO DO CODIGO """
+
 #modulo para o alfabeto
 import string
 
-def encrypt(text, shift):
+"""
+Encrypt
 
-    msg_encriptada = list(range(len(text)))
+"""
+def encripta(text, shift):
+
+    texto_encriptado = list(range(len(text)))
     alfabeto = string.ascii_lowercase # 'abcdefghijklmnopqrstuvwxyz'
-    first_half = alfabeto[:shift]
-    second_half = alfabeto[shift:]
-    shifted_alfabeto = second_half + first_half
+    primeira_metade = alfabeto[:shift]
+    segunda_metade = alfabeto[shift:]
+    shifted_alfabeto = segunda_metade + primeira_metade
 
     for i, letra in enumerate(text.lower()):
 
         if letra in alfabeto:
             original_index = alfabeto.index(letra)
             nova_letra = shifted_alfabeto[original_index]
-            msg_encriptada[i] = nova_letra
+            texto_encriptado[i] = nova_letra
         else:
-            msg_encriptada[i] = letra
+            texto_encriptado[i] = letra
 
-    return "".join(msg_encriptada)
+    return "".join(texto_encriptado)
 
-def decrypt(text, shift):
+
+"""
+Decrypt
+
+"""
+def desencripta(texto, shift):
     """ quando a posicao ou mudanca e conhecida """
-    decrypted_text = list(range(len(text)))
+    texto_desencriptado = list(range(len(texto)))
     alfabeto = string.ascii_lowercase
-    first_half = alfabeto[:shift]
-    second_half = alfabeto[shift:]
-    shifted_alfabeto = second_half + first_half
+    primeira_metade = alfabeto[:shift]
+    segunda_metade = alfabeto[shift:]
+    shifted_alfabeto = segunda_metade + primeira_metade
 
-    for i, letra in enumerate(text.lower()):
+    for i, letra in enumerate(texto.lower()):
 
         if letra in alfabeto:
             index = shifted_alfabeto.index(letra)
-            original_letra = alfabeto[index]
-            decrypted_text[i] = original_letra
+            letra_original = alfabeto[index]
+            texto_desencriptado[i] = letra_original
         else:
-            decrypted_text[i] = letra
+            texto_desencriptado[i] = letra
 
-    return "".join(decrypted_text)
+    return "".join(texto_desencriptado)
 
-def brute_force_decrypt(text):
+"""
+Brute-Force
+
+"""
+def desencripta_bforce(texto):
     """ Se a posicao/mudanca não for conhecida  """
     for n in range(26):
-        print(f"Posição {n}")
-        print(decrypt(text, n))
+        print(f"Posição / Mudança {n}")
+        print(desencripta(texto, n))
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 
 print("")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("| MESI2022 *CCA-PY* Exercicio nº. 11   b      |")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-TEXTO = input("+ INSERIR MSG ADESENCRIPTAR: " )
+msg = input("+ INSERIR MSG A DESENCRIPTAR: " )
 key = int(input("+ ESCOLHA UMA CHAVE: " ))
 
+#ecripta texto e chave previamente definida # sem input do utilizador
+#e = encripta("xrtetxto0 xfixoth", 8)
 
-#input_b = int(input())
+e = encripta(msg , key)
+desencripta_bforce(e)
 
-print("")
+print("\n+ MENSAGEM INSERIDA:")
+print(desencripta(e, key))
 
-#e = encrypt("texto fixo", 8)
+print("+ CHAVE USADA:")
+print(key)
 
-# Encripta
-e = encrypt(TEXTO , key)
-# Decripta
-print(decrypt(e, key))
-
-# forca o e
-brute_force_decrypt(e)
+print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
