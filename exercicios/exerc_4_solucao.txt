@@ -1,0 +1,38 @@
+*** POC EXERC4-a ***
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+=> Escolha uma opção:
++ Playfair => Encrytar / Decryptar? [e/d] e
++ INSERIR A CHAVE: BENFICA
+INSERIR A MSG (TEXTO): PORTUGAL
+BENFICA
+
+B       E       N       F       I
+C       A       D       G       H
+K       L       M       O       P
+Q       R       S       T       U
+V       W       X       Y       Z
+PORTUGAL
+KPSUT HLR
++ Voltar a tentar... => Encrypt ou Decrypt? [y/n]y
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+=> Escolha uma opção:
++ Playfair => Encrytar / Decryptar? [e/d] d
++ Inserir a Chave para desencriptar a cifra: BENFICA
+Inserir a Cifra (texto) que quer desencriptar aqui: KPSUT HLR
+BENFICA
+
+B       E       N       F       I
+C       A       D       G       H
+K       L       M       O       P
+Q       R       S       T       U
+V       W       X       Y       Z
+PORTU GAL
++ Voltar a tentar... => Encrypt ou Decrypt? [y/n]
