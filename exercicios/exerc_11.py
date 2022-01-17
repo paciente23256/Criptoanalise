@@ -84,10 +84,9 @@ def decrypt(text, shift):
 def brute_force_decrypt(text):
     """ Se a posicao/mudanca não for conhecida  """
     for n in range(26):
-        #print(" +-+-+-+-+-+-+ +-+ +-+-+-+-+-+\n")
         print(f"Posicao {n}")
         print(decrypt(text, n))
-        print(" +-+-+-+-+-+-+ +-+ +-+-+-+-+-+\n")
+        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 
 print("")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
