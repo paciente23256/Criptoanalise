@@ -296,21 +296,21 @@ if __name__ == '__main__':
         print("| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |")
         #print("|     Playfair Cypher tool  Enc/Dec           | ")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-        print("=> Escolha uma opção:")
-        action = input('+ Playfair => Encrytar / Decryptar? [e/d] ')
+        print("\n+ CIFRA PLAYFAIR")
+        action = input('+ ESCOLHA 1 OPÇÃO: ENC || DEC ? [e / d] ')
         if action == 'e':
-            chave_secreta = input('+ INSERIR A CHAVE: ')
-            secret_msg = input('INSERIR A MSG (TEXTO): ')
+            chave_secreta = input('+ INSIRA A CHAVE: ')
+            secret_msg = input('INSIRA A MSG (TEXTO): ')
             encrypt(secret_msg, chave_secreta)
         elif action == 'd':
-            chave_secreta = input('+ Inserir a Chave para desencriptar a cifra: ')
-            secret_cipher = input('Inserir a Cifra (texto) que quer desencriptar aqui: ')
+            chave_secreta = input('+ Insira a Chave para desencriptar a cifra: ')
+            secret_cipher = input('Insira a Cifra (texto) que quer desencriptar: ')
             decrypt(secret_cipher, chave_secreta)
         else:
             print('+ opção inválida')
             break
 
-        selection = input('+ Voltar a tentar... => Encrypt ou Decrypt? [y/n]')
+        selection = input('+ Voltar a tentar... => ENC || DEC ? [y/n]')
         if selection == 'y':
             continue
         elif selection == 'n':
