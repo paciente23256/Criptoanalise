@@ -3,19 +3,21 @@ Unidade Curricular CCA -Criptografia e Criptanalise Aplicadas - Criptanalise
 
 
 Trabalho de Grupo - Exercicios em Python\
-Alunos : Óscar Barreira; Pedro Ferreira; Rui Ventura.\
+Alunos : Óscar Barreira; Pedro Ferreira; Rui Ventura.
 
 
 # Objectivos (requisitos):
 - Ver PDF
 
+# Criptoanálise
 crip·to·a·ná·li·se\
 (cripto- + análise)\
 nome feminino\
-Análise ou decifração de comunicação ou escrita codificada ou secreta. = CRIPTANÁLISE\
+Análise ou decifração de comunicação ou escrita codificada ou secreta. = CRIPTANÁLISE
 
 Palavras relacionadas: criptanálise, criptologia, criptoanalista, criptoanalítico.\
 
+Descrição: Criptoanálise\
 Criptoanálise é um processo de encontrar pontos fracos em algoritmos criptográficos e usar essas fraquezas para decifrar o texto cifrado sem conhecer a chave secreta (exemplo dedução). Às vezes não é a fraqueza no próprio algoritmo criptográfico, mas sim na forma como é aplicada que faz criptoanálisis bem sucedidas. Um atacante pode ter outros objetivos, bem como, tais como:
 
 - Total Break - Encontrar a chave secreta.
