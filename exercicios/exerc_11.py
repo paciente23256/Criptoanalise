@@ -20,23 +20,6 @@ Opções:
 -d : decifrar
 -k n : valor da chave a ser usada
 
-Exercicio
-11. Tendo como referência a análise de frequências, desenvolva um programa em Python
-que seja capaz de quebrar a Cifra de César:
-a. Explique como funciona a análise de frequências e como esta pode ser aplicada
-para quebrar a Cifra de César;
-
-R:
-A análise de frequências é uma técnica simples de criptanálise que consiste em identificar
-os caracteres do texto cifrado usando a frequência de uso dos caracteres na língua em que
-se supõe que a mensagem esteja escrita. O algoritmo de César é um cifrador de substituição
-simples e portanto vulnerável a essa técnica.
-
-b. Descubra a mensagem original tendo como fonte o seguinte criptograma:
-“fdrijrcxrufhlrekfufkvljrcjrfcrxizdrjuvgfiklxrcgfikvtilqridfjhlrekrjdrvjtyfirirdhlrekfjwzcyfjvdmrfivqrirdhlrekrjefzmrjwztrirdgfitrjrigrirhlvwfjjvjefjjffdrimrcvlrgverklufmrcvrgverjvrrcdrerfvgvhlverhlvdhlvigrjjrircvdufsfarufikvdhlvgrjjrircvdurufiuvljrfdrifgvizxfvfrszjdfuvldrjevcvvhlvvjgvcyflftvl”
-
-R:
-"omarsalgadoquantodoteusalsaolagrimasdeportugalportecruzarmosquantasmaeschoraramquantosfilhosemvaorezaramquantasnoivasficaramporcasarparaquefossesnossoomarvaleuapenatudovaleapenaseaalmanaoepequenaquemquerpassaralemdobojadortemquepassaralemdadordeusaomaroperigoeoabismodeumasneleequeespelhouoceu"
 """
 
 """ INICIO DO CODIGO """
