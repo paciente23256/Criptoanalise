@@ -8,6 +8,8 @@ Alunos : Óscar Barreira; Pedro Ferreira; Rui Ventura.
 
 # Objectivos (requisitos):
 - Ver PDF
+- Ajuda - > https://inventwithpython.com/hacking/
+
 
 # Criptoanálise
 crip·to·a·ná·li·se\
@@ -15,9 +17,9 @@ crip·to·a·ná·li·se\
 nome feminino\
 Análise ou decifração de comunicação ou escrita codificada ou secreta. = CRIPTANÁLISE
 
-***Palavras relacionadas:*** criptanálise, criptologia, criptoanalista, criptoanalítico.\
+***Palavras relacionadas:*** criptanálise, criptologia, criptoanalista, criptoanalítico.
 
-***Descrição:*** Criptoanálise
+***Descrição:*** 
 Criptoanálise é um processo de encontrar pontos fracos em algoritmos criptográficos e usar essas fraquezas para decifrar o texto cifrado sem conhecer a chave secreta (exemplo dedução). Às vezes não é a fraqueza no próprio algoritmo criptográfico, mas sim na forma como é aplicada que faz criptoanálisis bem sucedidas. Um atacante pode ter outros objetivos, bem como, tais como:
 
 - Total Break - Encontrar a chave secreta.
