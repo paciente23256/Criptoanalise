@@ -1,0 +1,20 @@
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| MESI2022 *CCA-PY* Exercicio nº. 3 a  b      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
++ Inserir texto [string] a cifrar: BEJA
++ Inserir numero para a chave: 2
++ Texto cifrado:
+DGLC
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| MESI2022 *CCA-PY* Exercicio nº. 3 a  b      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++ Inserir texto [string] a cifrar: XPTO
++ Inserir numero para a chave: 12
++ Texto cifrado:
+JBFA
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
