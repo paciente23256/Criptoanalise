@@ -19,8 +19,12 @@ Análise ou decifração de comunicação ou escrita codificada ou secreta. = CR
 
 ***Palavras relacionadas:*** criptanálise, criptologia, criptoanalista, criptoanalítico.
 
+1. O que entende por criptanalise?
+
 ***Descrição:*** 
 Criptoanálise é um processo de encontrar pontos fracos em algoritmos criptográficos e usar essas fraquezas para decifrar o texto cifrado sem conhecer a chave secreta (exemplo dedução). Às vezes não é a fraqueza no próprio algoritmo criptográfico, mas sim na forma como é aplicada que faz criptoanálisis bem sucedidas. Um atacante pode ter outros objetivos, bem como, tais como:
+
+2. Argumente sobre ataques por criptanalise.
 
 - Total Break - Encontrar a chave secreta.
 
