@@ -1,0 +1,13 @@
+Metodo de Kasiski
+
+Em oposicao à análise por frequência surgiu o,
+Ataque a cifras de substituição polialfabéticas.
+Este teste visa tentar deduzir o comprimento da palavra-chave 
+usada na cifra. Para fazer isso, são procurados caracteres
+repetidos no texto (trigramas ou mais) e é medida a distância entre
+ eles. Se esses caracteres repetidos não forem por coincidência, então
+ correspondem a alguns caracteres repetidos no texto original também 
+ (ou seja, "o"), e a distância entre eles é uma multiplicação do 
+ comprimento da chave. 
+  O maior divisor comum mais frequente de todas  as ocorrências é o 
+ comprimento de chave mais provável.
