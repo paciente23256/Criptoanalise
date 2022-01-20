@@ -1,20 +1,32 @@
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|           Exercicio nº. 3 a e b             |
+|              Cifra de Caesar                |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1.Encriptar
+2.Desencriptar
+3.Sair
+Escolha uma opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| MESI2022 *CCA-PY* Exercicio nº. 3 a  b      |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-+ Inserir texto [string] a cifrar: BEJA
-+ Inserir numero para a chave: 2
-+ Texto cifrado:
++ Encriptar - Inserir Mensagem: BEJA
++ Inserir Chave: 2
+Mensagem encriptada:
 DGLC
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-
 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| MESI2022 *CCA-PY* Exercicio nº. 3 a  b      |
+|       MESI2022 *CCA - Criptoanalise*        |
+|           Exercicio nº. 3 a e b             |
+|              Cifra de Caesar                |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1.Encriptar
+2.Desencriptar
+3.Sair
+Escolha uma opção: 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-+ Inserir texto [string] a cifrar: XPTO
-+ Inserir numero para a chave: 12
-+ Texto cifrado:
-JBFA
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
++ Encriptar - Inserir Mensagem: XPTO
++ Inserir Chave: 12
+Mensagem encriptada:
+jbfa
+
