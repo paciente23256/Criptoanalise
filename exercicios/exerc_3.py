@@ -76,7 +76,7 @@ if __name__ == "__main__":
     
         # executa as funcoes com base no input do utilizador
         if choice not in ("1", "2", "3", "0"):
-            print("/!\ ERRO. Escolha uma opção válida.")
+            print(" ! ERRO. Escolha uma opção válida.")
         elif choice == "1":
             mensagem = input("+ Inserir msg a Encriptar: ")
             chave = int(input("+ Inserir Chave: ").strip())

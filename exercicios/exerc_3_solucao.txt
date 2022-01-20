@@ -1,0 +1,31 @@
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|       Exercicio nº. 3 a e b - opcao 1       |
+|              Cifra de Caesar                |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+3. Brute-Force
+0. Sair
+Escolha uma opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++ Inserir msg a Encriptar: beja
++ Inserir Chave: 2
+dglc
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|       Exercicio nº. 3 a e b - opcao 1       |
+|              Cifra de Caesar                |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+3. Brute-Force
+0. Sair
+Escolha uma opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++ Inserir msg a Encriptar: XPTO
++ Inserir Chave: 12
+jbfa
