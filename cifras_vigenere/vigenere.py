@@ -5,10 +5,11 @@ def main() -> None:
 
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|           Exercicio nº. 4 a e b             |")
+    print("|              *Criptoanalise*                |")
+    print("|                                             |")
     print("|              Cifra de vigenere              |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+
 
     mensagem = input("Inserir msg: ")
     chave = input("Inserir chave [alfanumerica]: ")
