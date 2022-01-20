@@ -1,100 +1,65 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
-# Alunos #Rui #Pedro #Oscar
-# Exercicio # 3 a) b)
+from __future__ import annotations
 
-"""
-
-Codifica uma determinada string (texto) com a cifra de césar e retornar mensagem encriptada
-
-    Parâmetros:
-    -----------
-    * mensagem: o texto simples que precisa ser codificado
-    * chave: o número de letras para deslocar a mensagem por
-
-
-    output:
-    * Uma string  texto cifrado/encriptado
-    
-    Sobre a cifra de César
-    =========================
-    A cifra de César tem o nome de Júlio César, que a usou ao enviar
-    mensagens militares secretas para suas tropas. Esta é uma cifra de substituição simples
-    onde cada caractere no texto simples é deslocado por um certo número conhecido
-    como a "chave" ou "posicao".
-
-    Exemplo:
-    Digamos que temos a seguinte mensagem:
-    "Olá, capitão"
-
-    O alfabeto é composto de letras maiúsculas e minúsculas:
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-    E nosso turno é "2"
-
-    Podemos então codificar a mensagem, uma letra de cada vez. "H" ficaria "J",
-    já que "J" está a duas letras de distância, e assim por diante. Se a mudança 
-    for superior a duas vezes, ou nossa letra estiver no final do alfabeto, voltamos ao inicio.
-    ("Z" mudaria para "a" depois para "b" e assim por diante).
-
-"""
-
-from email import message
 from string import ascii_letters
 
 
-"""
-Cifrar
-c = (x + n) % 26
-"""
-
-def encrypt(message, chave):
+def encrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
+    """
+    Cifrar
+    c = (x + n) % 26
+    """
     # Define o alfabeto para caracteres minúsculos e maiúsculos
-    alfabeto = ascii_letters 
-    # Resultado final da string
+    alfabeto = alphabet or ascii_letters
+
+    # resultado final da string
     result = ""
-    for char in message:
-        if char not in alfabeto:
+
+    for character in mensagem:
+        if character not in alfabeto:
             # Anexa sem encriptar se o caracter não estiver no alfabeto
-            result += char
+            result += character
         else:
             # Obtem o índice da nova chave e verifique se não é muito grande
-            nova_chave = (alfabeto.index(char) + chave) % len(alfabeto)
+            nova_chave = (alfabeto.index(character) + chave) % len(alfabeto)
+
             # Anexa o caracter encriptado ao alfabeto
             result += alfabeto[nova_chave]
+
     return result
-"""
-Descifrar
-x = (c - n) % 26
-"""
-def decrypt(message, chave):
-    # Ativa o modo de desencriptacao torna a chave negativa
-    return encrypt(message, (chave * -1))
 
 
-"""
-Brute-force
-Cifra de Caesar.
-
-"""
-
-def brute_force():
-    alfabeto = ascii_letters
+def decrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
     
+    """
+    Descifrar
+    x = (c - n) % 26
+    """
+    # Torna o valor da chave negativo, inicia o decode
+    chave *= -1
+
+    return encrypt(mensagem, chave, alphabet)
+
+
+def brute_force(mensagem: str, alphabet: str | None = None) -> dict[int, str]:
+    """
+    Força-Bruta
+    
+    """
+    # Define o alfabeto para caracteres minúsculos e maiúsculos
+    alfabeto = alphabet or ascii_letters
+
+    # Armazena todos as combinacoes
     brute_force_data = {}
-    
+
+    # Percore todos as combinacoes
     for chave in range(1, len(alfabeto) + 1):
-       
-        brute_force_data[chave] = decrypt(message, chave, alfabeto)
-        
+        # Descripta a mensagem e armazena os resultados em data
+        brute_force_data[chave] = decrypt(mensagem, chave, alfabeto)
+
     return brute_force_data
 
+if __name__ == "__main__":
 
-"""
-banner - menu
-"""
-def main():
     while True:
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
@@ -103,30 +68,32 @@ def main():
         print("|              Cifra de Caesar                |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print(*["1. Encriptar", "2. Desencriptar", "3. Brute-Force" , "0. Sair"], sep="\n")
-
-        user_choice = input("Escolha uma opção: ").strip() or "0"
+        # input do utilizador
+        choice = input("Escolha uma opção: ").strip() or "0"
+          
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
+        
+    
+        # executa as funcoes com base no input do utilizador
+        if choice not in ("1", "2", "3", "0"):
+            print("/!\ ERRO. Escolha uma opção válida.")
+        elif choice == "1":
+            mensagem = input("+ Inserir msg a Encriptar: ")
+            chave = int(input("+ Inserir Chave: ").strip())
 
-        if user_choice not in ("1", "2", "3", "0"):
-            print("! ERROR : Escolha uma opção válida!")
-        elif user_choice == "1":
-            message = input("+ Ecriptar Mensagem: ")
+            print(encrypt(mensagem, chave))
+        elif choice == "2":
+            mensagem = input("+ Inserir msg a Desencriptar: ")
             chave = int(input("+ Inserir Chave: ").strip())
-            print("\nMensagem Encriptada:")
-            print(encrypt(message, chave))
-        elif user_choice == "2":
-            message = input("+ Desencriptar Mensagem: ")
-            chave = int(input("+ Inserir Chave: ").strip())
-            print("\nMensagem Desencriptada:")
-            print(decrypt(message, chave))
-        elif user_choice == "3":
-            message = input("+ Desencriptar Mensagem: ")
-            brute_force_data = brute_force(message)
+
+            print(decrypt(mensagem, chave))
+        elif choice == "3":
+            mensagem = input("+ Inserir msg a Desencriptar [Força-Bruta]: ")
+            brute_force_data = brute_force(mensagem)
+
             for chave, value in brute_force_data.items():
-                print(f"Chave: {chave} | Message: {value}")
-        elif user_choice == "0":
-            print("Obrigado.")
-            break
+                print(f"Chave: {chave} | Menssagem: {value}")
 
-if __name__ == "__main__":
-    main()
+        elif choice == "0":
+            print("Adeus.")
+            break
