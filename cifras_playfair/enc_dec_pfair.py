@@ -1,5 +1,4 @@
-#CONTACT FOR ANY QUESTIONS
-#CODERATRI-ATRISAXENA2@GMAIL.COM
+ss
 
 key=input("Inserir a Chave ")
 key=key.replace(" ", "")
