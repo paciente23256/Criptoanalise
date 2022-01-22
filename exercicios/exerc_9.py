@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 5 a) - Cifra de vigenere  - Cifra.
+# Exercicio # 9 a) - Cifra de vigenere  - DeCifra.
 
 LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -13,7 +13,7 @@ def main() -> None:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|           Exercicio nº. 5 a e b             |")
+    print("|        Exercicio nº. 9 a - opcao d          |")
     print("|              Cifra de vigenere              |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     modo = input("e. Encriptar\nd. Desencriptar\nEscolha uma Opção: ")
