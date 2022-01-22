@@ -1,0 +1,22 @@
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|         Exercicio nº. 10 a  - opcao 2       |
+|              Cifra Rail Fence               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+0. Sair
+Escolha uma Opção: 2
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Inserir a msg: WHITEASANVIR
+Inserir o numero de trilhos (linhas): 4
+W.....H.....
+
+.I...T.E...A
+
+..S.A...N.V.
+
+...I.....R..
+
+MSg Desencriptada: WISIATHENRVA
