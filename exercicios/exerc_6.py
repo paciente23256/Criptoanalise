@@ -33,17 +33,17 @@ def cipher_encryption():
     msg = msg.replace(" ", "")
 
     # cria uma matriz vazia
-    railMatrix = []
+    rail_no = []
     for i in range(rails):
-        railMatrix.append([])
+        rail_no.append([])
     for row in range(rails):
         for coluna in range(len(msg)):
-            railMatrix[row].append('.')
+            rail_no[row].append('.')
         # inner for
     # for
 
-    # testar a matriz
-    #for row in railMatrix:
+    # debug - testar a matriz
+    #for row in rail_no:
     #    for coluna in row:
     #        print(coluna, end="")
     #    print("\n")
@@ -55,7 +55,7 @@ def cipher_encryption():
     check = 0
     for i in range(len(msg)):
         if check == 0:
-            railMatrix[row][i] = msg[i]
+            rail_no[row][i] = msg[i]
             row += 1
             if row == rails:
                 check = 1
@@ -63,7 +63,7 @@ def cipher_encryption():
             # inner if
         elif check == 1:
             row -= 1
-            railMatrix[row][i] = msg[i]
+            rail_no[row][i] = msg[i]
             if row == 0:
                 check = 0
                 row = 1
@@ -71,7 +71,7 @@ def cipher_encryption():
         # if-else
 
     # testa a matriz com a mensagem em zig-zag
-    # for row in railMatrix:
+    # for row in rail_no:
     #     for coluna in row:
     #         print(coluna, end="")
     #     print("\n")
@@ -81,7 +81,7 @@ def cipher_encryption():
     encryp_text = ""
     for i in range(rails):
         for j in range(len(msg)):
-            encryp_text += railMatrix[i][j]
+            encryp_text += rail_no[i][j]
     # for
 
     # remove '.' do texto encriptado
@@ -102,17 +102,17 @@ def cipher_decryption():
     msg = msg.replace(" ", "")
 
     # creating an empty matrix
-    railMatrix = []
+    rail_no = []
     for i in range(rails):
-        railMatrix.append([])
+        rail_no.append([])
     for row in range(rails):
         for coluna in range(len(msg)):
-            railMatrix[row].append('.')
+            rail_no[row].append('.')
         # inner for
     # for
 
     # testing the matrix
-    # for row in railMatrix:
+    # for row in rail_no:
     #     for coluna in row:
     #         print(coluna, end="")
     #     print("\n")
@@ -124,7 +124,7 @@ def cipher_decryption():
     check = 0
     for i in range(len(msg)):
         if check == 0:
-            railMatrix[row][i] = msg[i]
+            rail_no[row][i] = msg[i]
             row += 1
             if row == rails:
                 check = 1
@@ -132,7 +132,7 @@ def cipher_decryption():
                 # inner if
         elif check == 1:
             row -= 1
-            railMatrix[row][i] = msg[i]
+            rail_no[row][i] = msg[i]
             if row == 0:
                 check = 0
                 row = 1
@@ -140,7 +140,7 @@ def cipher_decryption():
         # if-else
 
     # testa a matriz com a msg em zig-zag
-    # for row in railMatrix:
+    # for row in rail_no:
     #     for coluna in row:
     #         print(coluna, end="")
     #     print("\n")
@@ -151,19 +151,19 @@ def cipher_decryption():
     ordr = 0
     for i in range(rails):
         for j in range(len(msg)):
-            temp = railMatrix[i][j]
+            temp = rail_no[i][j]
             if re.search("\\.", temp):
                 # skipping '.'
                 continue
             else:
-                railMatrix[i][j] = msg[ordr]
+                rail_no[i][j] = msg[ordr]
                 ordr += 1
             # if-else
         # inner for
     # for
 
     # testa a re odernacao da matriz
-    for i in railMatrix:
+    for i in rail_no:
         for coluna in i:
             print(coluna, end="")
         #inner for
@@ -176,7 +176,7 @@ def cipher_decryption():
     decryp_text = ""
     for i in range(len(msg)):
         if check == 0:
-            decryp_text += railMatrix[row][i]
+            decryp_text += rail_no[row][i]
             row += 1
             if row == rails:
                 check = 1
@@ -184,7 +184,7 @@ def cipher_decryption():
             # inner if
         elif check == 1:
             row -= 1
-            decryp_text += railMatrix[row][i]
+            decryp_text += rail_no[row][i]
             if row == 0:
                 check = 0
                 row = 1

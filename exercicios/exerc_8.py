@@ -20,16 +20,17 @@ digrafos = []  # matriz lista, onde estarão os dígrafos
 total = 0  # Variável acumulacao
 alfabeto = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-    """
-    Tabela 
-    """
+""" 
+tabela
+
+"""
 # Função que verifica validade do input:
 def inputString(mensagem):
     while True:
 	
         print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|       Exercicio nº. 4 a e b - opcao 1       |")
+        print("|       Exercicio nº. 8 a     - opcao 1       |")
         print("|              Cifra Play Fair                |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 
