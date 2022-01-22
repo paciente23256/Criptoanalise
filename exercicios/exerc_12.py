@@ -4,35 +4,34 @@
 # Alunos #Rui #Pedro #Oscar
 # Exercicio # 12 a) - Cifra de Cesar - Brute Force
 
-"""permite que o python crie string das anotacoes"""
-from __future__ import annotations
-
+"""Alfabeto upper and lower """
 from string import ascii_letters
 
 
-def encrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
+"""funcao encripta """
+def encrypt(mensagem, chave):
     """
     Cifrar
     c = (x + n) % 26
-    
+
     Escolhe a chave secreta (posicao) neste caso o "n" para cada letra no texto simples, e
-    é substituida por uma letra do alfabeto que esteja a "n" letras de distância da letra. 
+    é substituida por uma letra do alfabeto que esteja a "n" letras de distância da letra.
     (Ex: para uma chave de 1, a se tornarva-se b, z tornarva-se a, etc.)
 
     encripta uma determinada string (texto) com a cifra de césar e retorna o codificado
     mensagem
-    
+
     Parametros:
     -----------
     * menssage: texto simples que precisa ser codificado
     * key: número de letras para deslocar a mensagem
-    
+
      Retorna:
     *   A string que contem o texto cifrado
 
     """
     # Define o alfabeto para caracteres minúsculos e maiúsculos
-    alfabeto = alphabet or ascii_letters
+    alfabeto = ascii_letters
 
     # resultado final da string
     result = ""
@@ -50,46 +49,47 @@ def encrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
 
     return result
 
+"""Funcao decripta"""
+def decrypt(mensagem, chave):
 
-def decrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
-    
     """
     Descifrar
     x = (c - n) % 26
-    
+
     Parametros:
     -----------
     *   menssage: texto simples que precisa ser descodificado
     *   key: the number of letters to shift the message backwards by to decode
     Retorna:
     *   A string containing the decoded plain-text
-    
+
     """
     # Torna o valor da chave negativo, inicia o decode
     chave *= -1
 
-    return encrypt(mensagem, chave, alphabet)
+    return encrypt(mensagem, chave)
 
 
-def brute_force(mensagem: str, alphabet: str | None = None) -> dict[int, str]:
+"""Funcao brute force"""
+def brute_force(mensagem):
     """
     Força-Bruta:
     ------------
     Retorna todas as combinações possíveis de chaves e as strings decodificadas no
     forma de dicionário
-    
+
     Parametros:
     -----------
     * message: o texto cifrado a ser usado durante a força bruta
     |
-    -----------    
+    -----------
     Força bruta é quando uma pessoa intercepta uma mensagem ou senha, sem saber
     a chave e tenta todas as combinações. Com a cifra de césar torna-se fácil,
-    uma vez que estamos limitados as letras do alfabeto. 
+    uma vez que estamos limitados as letras do alfabeto.
     Quanto maior for a complexidade da cifra , maior sera o tempo levado a fazer força bruta.
     """
     # Define o alfabeto para caracteres minúsculos e maiúsculos
-    alfabeto = alphabet or ascii_letters
+    alfabeto = ascii_letters
 
     # Armazena todos as combinacoes
     brute_force_data = {}
@@ -97,7 +97,7 @@ def brute_force(mensagem: str, alphabet: str | None = None) -> dict[int, str]:
     # Percore todos as combinacoes
     for chave in range(1, len(alfabeto) + 1):
         # Descripta a mensagem e armazena os resultados em data
-        brute_force_data[chave] = decrypt(mensagem, chave, alfabeto)
+        brute_force_data[chave] = decrypt(mensagem, chave)
 
     return brute_force_data
 
@@ -113,10 +113,10 @@ if __name__ == "__main__":
         print(*["1. Encriptar", "2. Desencriptar", "3. Brute-Force" , "0. Sair"], sep="\n")
         # input do utilizador
         choice = input("Escolha uma opção: ").strip() or "0"
-          
+
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-        
-    
+
+
         # executa as funcoes com base no input do utilizador
         if choice not in ("1", "2", "3", "0"):
             print(" ! ERRO. Escolha uma opção válida.")
