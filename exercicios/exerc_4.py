@@ -2,320 +2,240 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 4 a) b)
-import os, re
+# Exercicio # 4 a) b) - Cifra PlayFair
 
 
-def print_tabela():
-    tabela = ''
-    for r in range(5):
-        tabela += '\n'
-        for c in range(5):
-            tabela += tabela_main[r][c] + '\t'
-    print(tabela)
 
 
-# Funcao ve_tabela(letra) verifica se a letra ja existe na tabela
-def ve_tabela(letra):
-    ehlo = False
-    exit = False
-    for r in range(5):
-        if exit == False:
-            for c in range(5):
-                if tabela_main[r][c] == letra:
-                    ehlo = True
-                    exit = True
-                    break
+import numpy as np
 
-    return ehlo
+"""
+O objeto principal do modulo numpy é o array multidimensional homogêneo. 
+É uma tabela de elementos (geralmente números), todos do mesmo tipo, 
+indexados por uma tupla (lista ordenada finita) de numeros inteiros positivos. 
+neste modulo as dimensões são chamadas de eixos.
 
 
-# Funcao celula_tabela(letra) define 1 celula na tabela para uma letra especifica
-def celula_tabela(letra, nova_tabela):
-    exit = False
-    for r in range(5):
-        if not exit:
-            for c in range(5):
-                if nova_tabela[r][c] == '*':
-                    nova_tabela[r][c] = letra
-                    exit = True
-                    break
+"""
 
 
-# Funcaoinit_tabela() inicia  a tabela com tudo [*]
-def init_tabela():
-    char = '*'
-    for i in range(5):
-        for j in range(5):
-            tabela_main[i][j] = char
-    return tabela_main
+digrafos = []  # Lista 2D, onde estarão os dígrafos
+total = 0  # Variável acumulacao
+alfabeto = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+# ------------------------------- Tabela Chave ------------------------------- #
 
 
-#Função limpa_chave_secreta(chave_secreta) altera chave_secreta para maiúsculas e substitui I por J
-def limpa_chave_secreta(chave_secreta):
-    # remove cracteres non-alpha
-    chave_secreta = re.sub(r'[^a-zA-Z]+', '', chave_secreta)
-    # muda para maiusculas
-    chave_secreta = chave_secreta.upper()
-    # substitui espacos por ""
-    chave_secreta = chave_secreta.replace(" ", "")
-
-    if chave_secreta:
-        for J in chave_secreta:
-            chave_secreta = chave_secreta.replace('J', 'I')
-
-    print(chave_secreta)
-    return chave_secreta
-
-
-# Função para criar a tabela, primeiro insere a chave e depois adiciona o restante alfabeto
-def criar_tabela(chave_secreta):
-    # Obtem nova chave atraves função limpa_chave_secreta
-    nova_chave_secreta = limpa_chave_secreta(chave_secreta)
-    # Inicia a tabela para criar uma nova instância
-    nova_tabela = init_tabela()
-
-    # Adiciona a chave a tabela
-    key_chars = []
-    for char in nova_chave_secreta:
-        if len(key_chars) == 0:
-            key_chars.append(char)
-        else:
-            exist = False
-            for c in key_chars:
-                if c == char:
-                    exist = True
-                    break
-            if exist == False:
-                key_chars.append(char)
-
-    for c in key_chars:
-        celula_tabela(c, nova_tabela)
-
-    tabela_main = nova_tabela
-    for char in alphabet.upper():
-        if ve_tabela(char) == False:
-            celula_tabela(char, tabela_main)
-
-    return (tabela_main)
-
-
-def find_letra(letra):
-    posicao = []
-    for i in range(5):
-        for j in range(5):
-            if tabela_main[i][j] == letra:
-                posicao = [i, j]
-    return posicao
-
-
-def limpa_msg_secreta(msg):
-    # Remove espacos da msg
-    msg = msg.upper()
-    msg = msg.replace('J', 'I')
-    msg = msg.replace(" ", "")
-    nova_msg = []
-    nova_msg = msg
-    # Converte a lista para uma string de forma a poder manipular
-    ch = []
-    for cr in nova_msg:
-        if len(ch) == 0:
-            ch.append(cr)
-        else:
-            ch.append(cr)
-    # Vai a msg e separa letras similares com um X ou um Q
-    count = len(ch)
-    for index in range(len(ch)):
-        if index < count:
-            ins_posicao = index + 1
-            if ins_posicao < count:
-                letra = ch[index]
-                nova_letra = ch[ins_posicao]
-                if nova_letra == letra and nova_letra != 'X':
-                    ch.insert(ins_posicao, 'X')
-                elif nova_letra == letra and nova_letra == 'X':
-                    ch.insert(ins_posicao, 'Q')
-                index += 1
-    # Se o intervalo for um número ímpar e se foi adicionado um Z a uma string que terminou com Z, substitui o segundo Z por um Q
-    if len(ch) % 2 != 0:
-        if ch[len(ch) - 1] == 'Z':
-            ch.append('Q')
-        else:
-            ch.append('Z')
-    ch = ''.join(ch)
-    print(ch)
-    return ch
-
-
-def encode_pair(l1, l2):
-    posicao1 = find_letra(l1)
-    posicao2 = find_letra(l2)
-    row_a = posicao1[0]
-    col_a = posicao1[1]
-    row_b = posicao2[0]
-    col_b = posicao2[1]
-    # Caracteres da mesma linha
-    if posicao1[0] == posicao2[0]:
-        if col_a == 4:
-            char1 = tabela_main[row_a][col_a - col_a]
-            char2 = tabela_main[row_b][col_b + 1]
-        elif col_b == 4:
-            char1 = tabela_main[row_a][col_a + 1]
-            char2 = tabela_main[row_b][col_b - col_b]
-        else:
-            char1 = tabela_main[row_a][col_a + 1]
-            char2 = tabela_main[row_b][col_b + 1]
-    # Caracteres da mesma coluna
-    elif posicao1[1] == posicao2[1]:
-        if row_a == 4:
-            char1 = tabela_main[row_a - row_a][col_a]
-            char2 = tabela_main[row_b + 1][col_b]
-        elif row_b == 4:
-            char1 = tabela_main[row_a + 1][col_a]
-            char2 = tabela_main[row_b - row_b][col_b]
-        else:
-            char1 = tabela_main[row_a + 1][col_a]
-            char2 = tabela_main[row_b + 1][col_b]
-    # Codificação retangular
-    else:
-        char1 = tabela_main[row_a][col_b]
-        char2 = tabela_main[row_b][col_a]
-    pair = char1, char2
-    pair = ''.join(pair)
-    return pair
-
-
-def decode_pair(l1, l2):
-    posicao1 = find_letra(l1)
-    posicao2 = find_letra(l2)
-    row_a = posicao1[0]
-    col_a = posicao1[1]
-    row_b = posicao2[0]
-    col_b = posicao2[1]
-    # Caracteres da mesma linha
-    if posicao1[0] == posicao2[0]:
-        if col_a == 0:
-            char1 = tabela_main[row_a][col_a + 4]
-            char2 = tabela_main[row_b][col_b - 1]
-        elif col_b == 0:
-            char1 = tabela_main[row_a][col_a - 1]
-            char2 = tabela_main[row_b][col_b + 4]
-        else:
-            char1 = tabela_main[row_a][col_a - 1]
-            char2 = tabela_main[row_b][col_b - 1]
-    # Caracteres da mesma coluna
-    elif posicao1[1] == posicao2[1]:
-        if row_a == 0:
-            char1 = tabela_main[row_a + 4][col_a]
-            char2 = tabela_main[row_b - 1][col_b]
-        elif row_b == 0:
-            char1 = tabela_main[row_a - 1][col_a]
-            char2 = tabela_main[row_b + 4][col_b]
-        else:
-            char1 = tabela_main[row_a - 1][col_a]
-            char2 = tabela_main[row_b - 1][col_b]
-    # Codificação retangular
-    else:
-        char1 = tabela_main[row_a][col_b]
-        char2 = tabela_main[row_b][col_a]
-    pair = char1, char2
-    pair = ''.join(pair)
-    return pair
-
-
-def encrypt(plaintext, chave_secreta):
-    msg = plaintext
-    criar_tabela(chave_secreta)
-    print_tabela()
-    nova_msg = limpa_msg_secreta(msg)
-    final_msg = []
-    for k in nova_msg:
-        if len(nova_msg) > 0:
-            l1 = nova_msg[:1]
-            nova_msg = nova_msg[1:]
-            l2 = nova_msg[:1]
-            nova_msg = nova_msg[1:]
-            new_pair = encode_pair(l1, l2)
-            final_msg.append(new_pair)
-            string1 = ''.join(final_msg)
-    # Divide a mensagem cifrada em 5 X 5 caracteres
-    cipher_text = ''
-    x = 1
-    for char in string1:
-        cipher_text += char
-        if x % 5 == 0:
-            cipher_text += ' '
-        x += 1
-
-    print(cipher_text)
-
-
-def decrypt(ciphertext, chave_secreta):
-    msg = ciphertext.upper()
-    msg = msg.replace(' ', '')
-    criar_tabela(chave_secreta)
-    print_tabela()
-    final_msg = []
-    string1 = ''
-    x = 1
-    for k in msg:
-        while x < len(msg) + 1:
-            l1 = msg[:1]
-            msg = msg[1:]
-            l2 = msg[:1]
-            msg = msg[1:]
-            new_pair = decode_pair(l1, l2)
-            final_msg.append(new_pair)
-            string1 = ''.join(final_msg)
-            # x += 1
-    # Divide a mensagem de texto em 5 X 5 caracteres
-    plain_text = ''
-    x = 1
-    for char in string1:
-        plain_text += char
-        if x % 5 == 0:
-            plain_text += ' '
-        x += 1
-
-    print(plain_text)
-
-
-# Starting point
-if __name__ == '__main__':
+    """
+    Tabela 
+    """
+# Função que verifica validade do input:
+def inputString(mensagem):
     while True:
-        alphabet = 'abcdefghiklmnopqrstuvwxyz'  # J foi retirado
-        secrata = []
-        tabela_main = [['', '', '', '', ''],
-                   ['', '', '', '', ''],
-                   ['', '', '', '', ''],
-                   ["", "", "", "", ""],
-                   ['', '', '', '', '']]
-
-        print("")
+	
+        print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        print("|       MESI2022 *CCA - Criptoanalise*        |")
+        print("|       Exercicio nº. 4 a e b - opcao 1       |")
+        print("|              Cifra Play Fair                |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print("| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |")
-        #print("|     Playfair Cypher tool  Enc/Dec           | ")
-        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-        print("\n+ CIFRA PLAYFAIR")
-        action = input('+ ESCOLHA 1 OPÇÃO: ENC || DEC ? [e / d] ')
-        if action == 'e':
-            chave_secreta = input('+ INSIRA A CHAVE: ')
-            secret_msg = input('INSIRA A MSG (TEXTO): ')
-            encrypt(secret_msg, chave_secreta)
-        elif action == 'd':
-            chave_secreta = input('+ Insira a Chave para desencriptar a cifra: ')
-            secret_cipher = input('Insira a Cifra (texto) que quer desencriptar: ')
-            decrypt(secret_cipher, chave_secreta)
-        else:
-            print('+ opção inválida')
-            break
 
-        selection = input('+ Voltar a tentar... => ENC || DEC ? [y/n]')
-        if selection == 'y':
-            continue
-        elif selection == 'n':
-            break
+        acum = 0 # Variável de acumulacao
+        string = str(input(mensagem))
+        string = string.replace(' ','')
+        string = string.upper()
+        listString = list(string)
+        if 'J' in listString:
+            indice = listString.index('J')
+            listString[indice] = 'I'
+
+        for letra in listString:
+            if letra in alfabeto:
+                acum += 1
+
+        if acum == len(listString):
+            return listString
+
+        print('Opção inválida')
+
+chave = inputString('+ Inserir a Chave: ')
+
+c = chave + alfabeto  # Concatenação de listas
+c = list(dict.fromkeys(c))  # Remove valores repetidos define chaves únicas
+
+row1, row2, row3, row4, row5 = c[:5], c[5:10], c[10:15], c[15:20], c[20:25]
+
+"""
+# modulo numpy
+
+array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14]])
+       
+"""
+tabelaChave = np.array([row1,
+                        row2,
+                        row3,
+                        row4,
+                        row5])
+
+print(f'\n{tabelaChave}\n')
+
+"""
+Menu input do utilizador
+"""
+while True:
+
+    modo = str(input(f'Insira 1 para Cifrar \nInsira 2 para Decifrar: \n'))
+    if modo == '1' or modo == '2':
+        break
+    else:
+        print('+ opção invalida')
+"""
+Funcoes Gerais
+"""
+
+def comparaComTabela(digrafo,length,linha1,coluna1,linha2,coluna2):
+    global total
+
+
+    if total == length:
+        return
+
+    # Obter a localização do dígrafo atual da iteração dentro da lista de digrafos
+    loc = np.where(np.all(digrafos == digrafo, axis=1))
+    loc = np.unique(loc[0])
+    total += len(loc)
+    print(f'Digrafo analisado: {digrafo}')
+    #print(f'loc: {loc}')
+
+    if linha1 == linha2:
+        print('Letras na mesma linha')
+
+        if modo == '1':
+            # no caso de estar na última coluna
+            if coluna1 == 4:
+                coluna1 = -1
+            if coluna2 == 4:
+                coluna2 = -1
+
+            a1 = tabelaChave[linha1][coluna1 + 1]
+            a2 = tabelaChave[linha2][coluna2 + 1]
+            # no caso de obter digrafo repetido em diferentes posições da lista de digrafos:
+            for i in loc:
+                resultado[i] = [a1,a2]
         else:
-            print('Opção inválida, O programa terminou')
-            os.system('pause')
-            break
+            # na primeira coluna
+            if coluna1 == 0:
+                coluna1 = 5
+            if coluna2 == 0:
+                coluna2 = 5
+            a1 = tabelaChave[linha1][coluna1 - 1]
+            a2 = tabelaChave[linha2][coluna2 - 1]
+            for i in loc:
+                resultado[i] = [a1,a2]
+
+
+    elif coluna1 == coluna2:
+        print('Letras na mesma coluna')
+
+        if modo == '1':
+            # na última linha
+            if linha1 == 4:
+                linha1 = -1
+            if linha2 == 4:
+                linha2 = -1
+            a1 = tabelaChave[linha1 + 1][coluna1]
+            a2 = tabelaChave[linha2 + 1][coluna2]
+            for i in loc:
+                resultado[i] = [a1,a2]
+        else:
+            # na primeira linha
+            if linha1 == 0:
+                linha1 = 5
+            if linha2 == 0:
+                linha2 = 5
+            a1 = tabelaChave[linha1 - 1][coluna1]
+            a2 = tabelaChave[linha2 - 1][coluna2]
+            for i in loc:
+                resultado[i] = [a1,a2]
+
+    else:
+        print('Letras separadas na matriz, formar retângulo')
+
+        distancia = coluna1 - coluna2
+        a1 = tabelaChave[linha1][coluna1 - distancia]
+        a2 = tabelaChave[linha2][coluna2 + distancia]
+        for i in loc:
+            resultado[i] = [a1,a2]
+    print()
+
+def percorreListaDigrafos(digrafos):
+    global resultado
+    # para q o algoritmo não cifre/decifre o que já foi cifrado, faz uma cópia:
+    resultado = digrafos.copy()
+    digrafos = np.array(digrafos)
+    length = len(digrafos)
+
+    print(f'Lista de digrafos: {digrafos}')
+    print()
+
+    for digrafo in digrafos:
+        # Encontra cada letra do digrafo na tabela-chave
+        firstLoc = np.where(tabelaChave == digrafo[0])
+        secondLoc = np.where(tabelaChave == digrafo[1])
+        linha1 = firstLoc[0][0]
+        coluna1 = firstLoc[1][0]
+        linha2 = secondLoc[0][0]
+        coluna2 = secondLoc[1][0]
+
+        comparaComTabela(digrafo,length,linha1,coluna1,linha2,coluna2)
+
+"""
+Funcoes especificas de encriptacao
+"""
+def fazListaDigrafos(lista):
+    for i in range(0,len(lista),2):
+        try:
+            if lista[i] == lista[i+1]:
+                lista.insert(i+1,'X')
+            digrafos.append([lista[i],lista[i+1]])
+        except IndexError:
+            pass
+
+    if len(lista) % 2 != 0:
+        digrafos.append([lista[-1],'X'])
+
+    return digrafos
+
+def cifrar():
+    lista = inputString('Inserir mesagem a cifrar: ')
+    percorreListaDigrafos(fazListaDigrafos(lista))
+
+"""
+Desencripta
+"""
+
+
+def decifrar():
+    decif = inputString('Inserir mensagem a decifrar: ')
+    # Fazer lista de digrafos:
+    for i in range(0,len(decif),2):
+        digrafos.append([decif[i],decif[i+1]])
+    percorreListaDigrafos(digrafos)
+
+
+"""
+Execucao do codigo
+"""
+if modo == '1':
+    cifrar()
+else:
+    decifrar()
+
+# Transformar lista em string:
+txt = np.concatenate((digrafos))
+txt = ''.join(txt)
+resposta = np.concatenate((resultado))
+resposta = ''.join(resposta)
+
+print(f'Texto: {txt} --> Resultado: {resposta}')

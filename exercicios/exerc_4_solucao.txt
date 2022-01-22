@@ -1,38 +1,41 @@
-*** POC EXERC4-a ***
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |
+|       MESI2022 *CCA - Criptoanalise*        |
+|       Exercicio nº. 4 a e b - opcao 1       |
+|              Cifra Play Fair                |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
++ Inserir a Chave: benfica
 
+[['B' 'E' 'N' 'F' 'I']
+ ['C' 'A' 'D' 'G' 'H']
+ ['K' 'L' 'M' 'O' 'P']
+ ['Q' 'R' 'S' 'T' 'U']
+ ['V' 'W' 'X' 'Y' 'Z']]
 
-+ CIFRA PLAYFAIR
-+ ESCOLHA 1 OPÇÃO: ENC || DEC ? [e / d] e
-+ INSIRA A CHAVE: BENFICA
-INSIRA A MSG (TEXTO): PORTUGAL
-BENFICA
-
-B       E       N       F       I
-C       A       D       G       H
-K       L       M       O       P
-Q       R       S       T       U
-V       W       X       Y       Z
-PORTUGAL
-KPSUT HLR
-+ Voltar a tentar... => ENC || DEC ? [y/n]y
+Insira 1 para Cifrar
+Insira 2 para Decifrar:
+1
 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |
+|       MESI2022 *CCA - Criptoanalise*        |
+|       Exercicio nº. 4 a e b - opcao 1       |
+|              Cifra Play Fair                |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Inserir mesagem a cifrar: portugal
+Lista de digrafos: [['P' 'O']
+ ['R' 'T']
+ ['U' 'G']
+ ['A' 'L']]
 
+Digrafo analisado: ['P' 'O']
+Letras na mesma linha
 
-+ CIFRA PLAYFAIR
-+ ESCOLHA 1 OPÇÃO: ENC || DEC ? [e / d] d
-+ Insira a Chave para desencriptar a cifra: BENFICA
-Insira a Cifra (texto) que quer desencriptar: KPSUT HLR
-BENFICA
+Digrafo analisado: ['R' 'T']
+Letras na mesma linha
 
-B       E       N       F       I
-C       A       D       G       H
-K       L       M       O       P
-Q       R       S       T       U
-V       W       X       Y       Z
-PORTU GAL
+Digrafo analisado: ['U' 'G']
+Letras separadas na matriz, formar retângulo
+
+Digrafo analisado: ['A' 'L']
+Letras na mesma coluna
+
+Texto: PORTUGAL --> Resultado: KPSUTHLR
