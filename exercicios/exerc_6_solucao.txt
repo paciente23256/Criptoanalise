@@ -1,0 +1,43 @@
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|     Exercicio nº. 6 a b e c - opcao 1       |
+|              Cifra Rail Fence               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+0. Sair
+Escolha uma Opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Inserir a msg: portugal
+Inserir o numero de  trilhos (linhas): 4
+Encrypted Text: paoglrut
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|     Exercicio nº. 6 a b e c - opcao 1       |
+|              Cifra Rail Fence               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+0. Sair
+Escolha uma Opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Inserir a msg: FELICIDADE
+Inserir o numero de  trilhos (linhas): 3
+Encrypted Text: FCDEIIAELD
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       MESI2022 *CCA - Criptoanalise*        |
+|     Exercicio nº. 6 a b e c - opcao 1       |
+|              Cifra Rail Fence               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Encriptar
+2. Desencriptar
+0. Sair
+Escolha uma Opção: 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Inserir a msg: WHITESANVIR
+Inserir o numero de  trilhos (linhas): 4
+Encrypted Text: WAHSNIEVRTI
+
