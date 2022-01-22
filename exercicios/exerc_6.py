@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
+# Alunos #Rui #Pedro #Oscar
+# Exercicio # 5 a) b) c) - Cifra Raifence
+
+"""modulo de expressoes regulares"""
 import re
 
 
