@@ -2,106 +2,142 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 11 a) b)
-# Usar cifra de ceasar
+# Exercicio # 11  b) e c) - Cifra de Cesar - Decifra.
+
+"""permite que o python crie string das anotacoes"""
+from __future__ import annotations
+
+"""permite a concatonacao do ascii_lowercase e ascii_uppercase (alfabeto mais. e min.)."""
+from string import ascii_letters
 
 
+def encrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
+    """
+    Cifrar
+    c = (x + n) % 26
+    
+    Escolhe a chave secreta (posicao) neste caso o "n" para cada letra no texto simples, e
+    é substituida por uma letra do alfabeto que esteja a "n" letras de distância da letra. 
+    (Ex: para uma chave de 1, a se tornarva-se b, z tornarva-se a, etc.)
 
-"""
+    encripta uma determinada string (texto) com a cifra de césar e retorna o codificado
+    mensagem
+    
+    Parametros:
+    -----------
+    * menssage: texto simples que precisa ser codificado
+    * key: número de letras para deslocar a mensagem
+    
+     Retorna:
+    *   A string que contem o texto cifrado
 
-Para cifrar:
-cesar -c -k 25 < texto-aberto.txt > texto-cifrado.txt
+    """
+    # Define o alfabeto para caracteres minúsculos e maiúsculos
+    alfabeto = alphabet or ascii_letters
 
-Para decifrar:
-cesar -d -k 25 < texto-cifrado.txt > texto-aberto.txt
+    # resultado final da string
+    result = ""
 
-Opções:
--c : cifrar
--d : decifrar
--k n : valor da chave a ser usada
-
-"""
-
-""" INICIO DO CODIGO """
-
-#modulo para o alfabeto
-import string
-
-"""
-Encrypt
-
-"""
-def encripta(text, shift):
-
-    texto_encriptado = list(range(len(text)))
-    alfabeto = string.ascii_lowercase # 'abcdefghijklmnopqrstuvwxyz'
-    primeira_metade = alfabeto[:shift]
-    segunda_metade = alfabeto[shift:]
-    shifted_alfabeto = segunda_metade + primeira_metade
-
-    for i, letra in enumerate(text.lower()):
-
-        if letra in alfabeto:
-            original_index = alfabeto.index(letra)
-            nova_letra = shifted_alfabeto[original_index]
-            texto_encriptado[i] = nova_letra
+    for character in mensagem:
+        if character not in alfabeto:
+            # Anexa sem encriptar se o caracter não estiver no alfabeto
+            result += character
         else:
-            texto_encriptado[i] = letra
+            # Obtem o índice da nova chave e verifique se não é muito grande
+            nova_chave = (alfabeto.index(character) + chave) % len(alfabeto)
 
-    return "".join(texto_encriptado)
+            # Anexa o caracter encriptado ao alfabeto
+            result += alfabeto[nova_chave]
+
+    return result
 
 
-"""
-Decrypt
+def decrypt(mensagem: str, chave: int, alphabet: str | None = None) -> str:
+    
+    """
+    Descifrar
+    x = (c - n) % 26
+    
+    Parametros:
+    -----------
+    *   menssage: texto simples que precisa ser descodificado
+    *   key: the number of letters to shift the message backwards by to decode
+    Retorna:
+    *   A string containing the decoded plain-text
+    
+    """
+    # Torna o valor da chave negativo, inicia o decode
+    chave *= -1
 
-"""
-def desencripta(texto, shift):
-    """ quando a posicao ou mudanca e conhecida """
-    texto_desencriptado = list(range(len(texto)))
-    alfabeto = string.ascii_lowercase
-    primeira_metade = alfabeto[:shift]
-    segunda_metade = alfabeto[shift:]
-    shifted_alfabeto = segunda_metade + primeira_metade
+    return encrypt(mensagem, chave, alphabet)
 
-    for i, letra in enumerate(texto.lower()):
 
-        if letra in alfabeto:
-            index = shifted_alfabeto.index(letra)
-            letra_original = alfabeto[index]
-            texto_desencriptado[i] = letra_original
-        else:
-            texto_desencriptado[i] = letra
+def brute_force(mensagem: str, alphabet: str | None = None) -> dict[int, str]:
+    """
+    Força-Bruta:
+    ------------
+    Retorna todas as combinações possíveis de chaves e as strings decodificadas no
+    forma de dicionário
+    
+    Parametros:
+    -----------
+    * message: o texto cifrado a ser usado durante a força bruta
+    |
+    -----------    
+    Força bruta é quando uma pessoa intercepta uma mensagem ou senha, sem saber
+    a chave e tenta todas as combinações. Com a cifra de césar torna-se fácil,
+    uma vez que estamos limitados as letras do alfabeto. 
+    Quanto maior for a complexidade da cifra , maior sera o tempo levado a fazer força bruta.
+    """
+    # Define o alfabeto para caracteres minúsculos e maiúsculos
+    alfabeto = alphabet or ascii_letters
 
-    return "".join(texto_desencriptado)
+    # Armazena todos as combinacoes
+    brute_force_data = {}
 
-"""
-Brute-Force
+    # Percore todos as combinacoes
+    for chave in range(1, len(alfabeto) + 1):
+        # Descripta a mensagem e armazena os resultados em data
+        brute_force_data[chave] = decrypt(mensagem, chave, alfabeto)
 
-"""
-def desencripta_bforce(texto):
-    """ Se a posicao/mudanca não for conhecida  """
-    for n in range(26):
-        print(f"Posição / Mudança {n}")
-        print(desencripta(texto, n))
+    return brute_force_data
+
+if __name__ == "__main__":
+
+    while True:
+        print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        print("|       MESI2022 *CCA - Criptoanalise*        |")
+        print("|      Exercicio nº. 11 b e c - opcao 3       |")
+        print("|              Cifra de Caesar                |")
+        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        print(*["1. Encriptar", "2. Desencriptar", "3. Brute-Force" , "0. Sair"], sep="\n")
+        # input do utilizador
+        choice = input("Escolha uma opção: ").strip() or "0"
+          
+        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
+        
+    
+        # executa as funcoes com base no input do utilizador
+        if choice not in ("1", "2", "3", "0"):
+            print(" ! ERRO. Escolha uma opção válida.")
+        elif choice == "1":
+            mensagem = input("+ Inserir msg a Encriptar: ")
+            chave = int(input("+ Inserir Chave: ").strip())
 
-print("")
-print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-print("| MESI2022 *CCA-PY* Exercicio nº. 11   b      |")
-print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-msg = input("+ INSERIR MSG A DESENCRIPTAR: " )
-key = int(input("+ ESCOLHA UMA CHAVE: " ))
+            print(encrypt(mensagem, chave))
+        elif choice == "2":
+            mensagem = input("+ Inserir msg a Desencriptar: ")
+            chave = int(input("+ Inserir Chave: ").strip())
 
-#ecripta texto e chave previamente definida # sem input do utilizador
-#e = encripta("xrtetxto0 xfixoth", 8)
+            print(decrypt(mensagem, chave))
+        elif choice == "3":
+            mensagem = input("+ Inserir msg a Desencriptar [Força-Bruta]: ")
+            brute_force_data = brute_force(mensagem)
 
-e = encripta(msg , key)
-desencripta_bforce(e)
+            for chave, value in brute_force_data.items():
+                print(f"Chave: {chave} | Menssagem: {value}")
 
-print("\n+ MENSAGEM INSERIDA:")
-print(desencripta(e, key))
-
-print("+ CHAVE USADA:")
-print(key)
-
-print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        elif choice == "0":
+            print("Adeus.")
+            break
