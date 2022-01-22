@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 7 a) - Cifra de Cesar - Decifra.
+# Exercicio # 3 a) e b) - Cifra de Cesar - Cifra.
 
 """permite que o python crie string das anotacoes"""
 from __future__ import annotations

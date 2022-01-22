@@ -2,27 +2,26 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 4 a) b) - Cifra PlayFair
-
+# Exercicio # 8 a) - Cifra PlayFair - Decifrar
 
 import numpy as np
 
 """
-Biblioteca : modulo
 O objeto principal do modulo numpy é o array multidimensional homogêneo. 
 É uma tabela de elementos (geralmente números), todos do mesmo tipo, 
 indexados por uma tupla (lista ordenada finita) de numeros inteiros positivos. 
 neste modulo as dimensões são chamadas de eixos.
 
+
 """
 
 
-digrafos = []  #  matriz lista, onde estarão os dígrafos
+digrafos = []  # matriz lista, onde estarão os dígrafos
 total = 0  # Variável acumulacao
 alfabeto = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
     """
-    Tabela
+    Tabela 
     """
 # Função que verifica validade do input:
 def inputString(mensagem):
@@ -96,7 +95,7 @@ def comparaComTabela(digrafo,length,linha1,coluna1,linha2,coluna2):
     if total == length:
         return
 
-    # Obter a localização do dígrafo atual da iteração dentro da lista de digrafos
+    # Obtem a localização do dígrafo atual da iteração dentro da lista de digrafos
     loc = np.where(np.all(digrafos == digrafo, axis=1))
     loc = np.unique(loc[0])
     total += len(loc)
@@ -186,7 +185,7 @@ def percorreListaDigrafos(digrafos):
         comparaComTabela(digrafo,length,linha1,coluna1,linha2,coluna2)
 
 """
-Funcoes especificas de encriptacao
+Funcoes especificas de cifra
 """
 def fazListaDigrafos(lista):
     for i in range(0,len(lista),2):
@@ -211,6 +210,7 @@ Decifra
 
 """
 
+
 def decifrar():
     decif = inputString('Inserir mensagem a decifrar: ')
     # Fazer lista de digrafos:
@@ -219,13 +219,13 @@ def decifrar():
     percorreListaDigrafos(digrafos)
 
 
-"""Execucao do codigo"""
+""" Execucao do codigo """
 if modo == '1':
     cifrar()
 else:
     decifrar()
 
-"""Transformar lista em string"""
+""" Transforma lista em string """
 txt = np.concatenate((digrafos))
 txt = ''.join(txt)
 resposta = np.concatenate((resultado))
