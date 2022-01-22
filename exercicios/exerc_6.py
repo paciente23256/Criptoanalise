@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 5 a) b) c) - Cifra Raifence
+# Exercicio # 6 a) b) c) - Cifra Raifence
 
 """modulo de expressoes regulares"""
 import re
@@ -11,10 +11,10 @@ import re
 """
 Funcao de cifra
 
-Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos"
+Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos" (linhas)
 sucessivos de uma grelha (matriz) imaginária, movendo-se para cima quando o trilho inferior
  é alcançado, para baixo novamente quando o trilho superior é alcançado e assim por diante até
- que todo o texto simples seja escrito Fora. O texto cifrado é então lido em rows.
+ que todo o texto simples seja escrito. O texto cifrado é então lido em coluna.
 
 Por exemplo, para criptografar a mensagem
 'WE ARE DISCOVERED. RUN AT ONCE' com 3 "trilhos", escreva o texto como:
