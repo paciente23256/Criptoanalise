@@ -1,12 +1,8 @@
 
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
-# Alunos #Rui #Pedro #Oscar
-# Exercicio # 5 a) b) - Cifra VIGENERE - Encriptar
 
-#Alfabeto - strings maius.
-
+#Alfabeto - strings maiusc.
 from string import ascii_uppercase
 # Este módulo fornece acesso ao Unicode Character Database (UCD) que define as propriedades dos caracteres para todos os caracteres Unicode
 import unicodedata 
@@ -213,8 +209,6 @@ if __name__ == "__main__":
   while True:
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|      Exercicio nº. 5 a) b) - opcao 1        |")
         print("|              Cifra de Vigenere              |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print(*["1. Cifrar", "2. Decifrar", "3. Brute-Force" , "0. Sair"], sep="\n")

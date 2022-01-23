@@ -110,8 +110,6 @@ if __name__ == "__main__":
     while True:
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|      Exercicio nº. 3 a) b) - opcao 1        |")
         print("|              Cifra de Caesar                |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print(*["1. Cifrar", "2. Decifrar", "3. Brute-Force" , "0. Sair"], sep="\n")

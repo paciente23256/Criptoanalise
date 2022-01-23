@@ -293,8 +293,7 @@ if __name__ == '__main__':
 
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print("| MESI2022 *CCA-PY* Exercicio nº. 4 a  b      |")
-        #print("|     Playfair Cypher tool  Enc/Dec           | ")
+        print("|              CIFRA PlayFair                 |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
         print("\n+ CIFRA PLAYFAIR")
         action = input('+ ESCOLHA 1 OPÇÃO: ENC || DEC ? [e / d] ')
