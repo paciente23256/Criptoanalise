@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 import numpy as np
 
 digrafos = []  # Lista 2D, onde estarão os dígrafos
