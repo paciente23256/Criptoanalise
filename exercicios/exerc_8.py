@@ -5,13 +5,13 @@
 # Exercicio # 8 a) - Cifra PlayFair - Decifrar
 
 import numpy as np
+#from string import ascii_uppercase
 
 """
-O objeto principal do modulo numpy é o array multidimensional homogêneo. 
+modulo numpy - objeto principal do modulo é o array multidimensional homogêneo. 
 É uma tabela de elementos (geralmente números), todos do mesmo tipo, 
 indexados por uma tupla (lista ordenada finita) de numeros inteiros positivos. 
 neste modulo as dimensões são chamadas de eixos.
-
 
 """
 

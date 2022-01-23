@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 11 b) c) - Cifra de Cesar - Decripta via -> Brute Force
+# Exercicio # 11 b) - Cifra de Cesar - Brute force
 
-"""Alfabeto upper and lower """
-from string import ascii_letters
+"""Alfabeto lowercase """
 
+#from string import ascii_lowercase #ascii_letters - minusc.
+from string import ascii_uppercase #ascii_letters - maiusc
 
 """funcao encripta """
 def encrypt(mensagem, chave):
@@ -31,7 +32,10 @@ def encrypt(mensagem, chave):
 
     """
     # Define o alfabeto para caracteres minúsculos e maiúsculos
-    alfabeto = ascii_letters
+
+   #alfabeto = ascii_letters # os 2
+    alfabeto = ascii_uppercase
+   #alfabeto = ascii_lowercase
 
     # resultado final da string
     result = ""
@@ -89,7 +93,7 @@ def brute_force(mensagem):
     Quanto maior for a complexidade da cifra , maior sera o tempo levado a fazer força bruta.
     """
     # Define o alfabeto para caracteres minúsculos e maiúsculos
-    alfabeto = ascii_letters
+    alfabeto = ascii_uppercase
 
     # Armazena todos as combinacoes
     brute_force_data = {}
@@ -107,7 +111,7 @@ if __name__ == "__main__":
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|      Exercicio nº. 11 c e d - opcao 3       |")
+        print("|        Exercicio nº. 11 b) - opcao 3        |")
         print("|              Cifra de Caesar                |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print(*["1. Encriptar", "2. Desencriptar", "3. Brute-Force" , "0. Sair"], sep="\n")
@@ -121,12 +125,12 @@ if __name__ == "__main__":
         if choice not in ("1", "2", "3", "0"):
             print(" ! ERRO. Escolha uma opção válida.")
         elif choice == "1":
-            mensagem = input("+ Inserir msg a Encriptar: ")
+            mensagem = input("+ Inserir msg a Encriptar: ").upper()
             chave = int(input("+ Inserir Chave: ").strip())
 
             print(encrypt(mensagem, chave))
         elif choice == "2":
-            mensagem = input("+ Inserir msg a Desencriptar: ")
+            mensagem = input("+ Inserir msg a Desencriptar: ").upper()
             chave = int(input("+ Inserir Chave: ").strip())
 
             print(decrypt(mensagem, chave))
