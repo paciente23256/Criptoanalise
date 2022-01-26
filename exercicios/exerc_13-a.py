@@ -11,6 +11,8 @@ i=(xi,yi)
 N medidas de uma variável aleatória X. Em cada medida, 
 a variável X assume os valores x1, x2, ...,xN.
 
+K=(ksize,c)
+
 """
 
 def get_qui_quadrado(s):
@@ -61,22 +63,19 @@ def main():
     print("|              Cifra de Vigenere              |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
     
-    c=input("Inserir msg cifrada: ")
-    key_size=int(input("Inserir da chave [int]: "))
-    
-    print("Tamanho da Chave:",key_size)
-
+    c=input("+ Inserir msg cifrada: ")
+    key_size=int(input("\n+ Inserir da chave [int]: "))
+    print("+ Comprimento Chave inserida:",key_size)
     k=get_key(c,key_size)
-    print("Key :",k.upper())
+    print("++ A Chave usada na Cifra: ",k.upper())
 
-    d_opt=input("Quer desencriptar o criptograma? (S/n)")
+    d_opt=input("\n+ Quer desencriptar o criptograma? (S/n)")
     while (d_opt!='s' and d_opt!='n'):
         print("Opção invalida!")
-        d_opt=input("Quer desencriptar o criptograma? (y/n)")
-
+        
     if d_opt=='s':
         msg=decrypt(k,c)
-        print("Mesagem decifrada:",msg)
+        print("\n+ Mensagem decifrada:\033[37;40m ",msg)
         print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     else:
         exit()
