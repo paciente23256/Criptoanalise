@@ -3,7 +3,7 @@ Cifra de cesar ataque de frequencias
 
 '''
 
-import string, sys, re
+import string, sys, re, subprocess
 
 """
 decifra
@@ -29,7 +29,9 @@ def decrypt(key, ciphertext):
             plaintext += " "
     return plaintext
 
+if __name__ == '__main__':
 
+    subprocess.call('clear',shell=True)
 
 try:
     # modo auto: obtem texto cifrado de opt
