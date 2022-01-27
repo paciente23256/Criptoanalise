@@ -14,7 +14,7 @@ Parâmetro: Nenhum
 Retorna: Retorna a chave digitada pelo utilizador
 
 """
-
+import subprocess
 xrange=range
 
 def get_key():
@@ -220,8 +220,11 @@ def get_coords(digraph, key_matrix):
     return coords
 
 
-def main():
-
+#def main():
+if __name__ == "__main__":
+    
+    subprocess.call('clear',shell=True)
+    
     print ("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print ("|       MESI2022 *CCA - Criptoanalise*        |")
     print ("|                                             |")
@@ -266,5 +269,5 @@ def main():
             print ("Adeus")
             break
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
