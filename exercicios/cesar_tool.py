@@ -11,7 +11,7 @@ from string import ascii_uppercase #ascii_letters - maiusc
 import runpy
 
 def go_freq():
-    runpy.run_path('exerc_11-b.py')
+    runpy.run_path('cesar_freq.py')
 
 """funcao encripta """
 def encrypt(mensagem, chave):
@@ -19,28 +19,15 @@ def encrypt(mensagem, chave):
     Cifra
     c = (x + n) % 26
 
-    Escolhe a chave secreta (posicao) neste caso o "n" para cada letra no texto simples, e
-    é substituida por uma letra do alfabeto que esteja a "n" letras de distância da letra.
-    (Ex: para uma chave de 1, a se tornarva-se b, z tornarva-se a, etc.)
-
-    encripta uma determinada string (texto) com a cifra de césar e retorna o codificado
-    mensagem
-
     Parametros:
     -----------
     * menssage: texto simples que precisa ser codificado
     * key: número de letras para deslocar a mensagem
-
-     Retorna:
-    *   A string que contem o texto cifrado
-
     """
-    # Define o alfabeto para caracteres minúsculos e maiúsculos
 
    #alfabeto = ascii_letters # os 2
     alfabeto = ascii_uppercase
    
-
     # resultado final da string
     result = ""
 
@@ -63,13 +50,6 @@ def decrypt(mensagem, chave):
     """
     Decifra
     x = (c - n) % 26
-
-    Parametros:
-    -----------
-    *   menssage: texto simples que precisa ser descodificado
-    *   key: the number of letters to shift the message backwards by to decode
-    Retorna:
-    *   A string containing the decoded plain-text
 
     """
     # Torna o valor da chave negativo, inicia o decode

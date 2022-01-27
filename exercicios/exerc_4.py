@@ -21,9 +21,9 @@ digrafos = []  #  matriz lista, onde estarão os dígrafos
 total = 0  # Variável acumulacao
 alfabeto = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-    """
+"""
     Tabela
-    """
+"""
 # Função que verifica validade do input:
 def inputString(mensagem):
     while True:

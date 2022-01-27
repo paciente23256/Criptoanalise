@@ -4,12 +4,10 @@
 '''
 
 
-#print(len(re.findall("a", raw_ciphertext)))
 
 import string, sys, re
-#from collections import defaultdict
 
-from caesar_decrypt import decrypt
+
 
 try:
     # auto mode: get ciphertext from opts
@@ -17,8 +15,8 @@ try:
 except:
     # interactive: prompt user
     raw_ciphertext = input("Ciphertext to break: ")
-    raw_bruteforce = input("Launch a bruteforce attack?: (defaults no) ")
-
+    #raw_bruteforce = input("Launch a bruteforce attack?: (defaults no) ")
+    raw_bruteforce = raw_ciphertext
 
 print("")
 ciphertext = raw_ciphertext.upper()
@@ -44,9 +42,7 @@ for l in list(map(chr, range(ord('A'), ord('[')))):
 
 
 
-#chars = defaultdict(int)
-#for char in raw_ciphertext:
-#    chars[char] += 1
+
 
 
 print("Numero de frequencias encontras no criptograma")
@@ -58,13 +54,3 @@ print("letra S")
 print(len(re.findall("s", raw_ciphertext)))
 print("letra R")
 print(len(re.findall("r", raw_ciphertext)))
-
-#print("Numero de frequencias encontras no criptograma")
-#print("letra E")
-#print(chars['e'])
-#print("letra O")
-#print(chars['o'])
-#print("letra S")
-#print(chars['s'])
-#print("letra R")
-#print(chars['r'])
