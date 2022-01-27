@@ -44,7 +44,7 @@ except:
     print("|       Cifra de Caesar -  Frequencias        |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 raw_ciphertext = input("+ Inserir A Chave Cifrada: ")
-raw_bruteforce = input("+ Começar Ataque?: Y \n")
+raw_bruteforce = input("\n+ forca bruta?: n ")
   
 ciphertext = raw_ciphertext.upper()
 if (raw_bruteforce.upper()).find("Y") != -1:

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Exercicio # 10 a) - Cifra Raifence - Decript
+# Exercicio # 6 a) b) c) - Cifra Raifence
 
 """modulo de expressoes regulares"""
 import re
@@ -204,10 +204,8 @@ def main():
 
     print("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|         Exercicio nº. 10 a  - opcao 2       |")
-    print("|              Cifra Rail Fence               |")
+    print("|         *Cifra Rail Fence - Tool*           |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-
 
     choice = int(input("1. Encriptar\n2. Desencriptar\n0. Sair\nEscolha uma Opção: "))
     if choice == 1:
