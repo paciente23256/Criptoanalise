@@ -4,6 +4,8 @@
 # Alunos #Rui #Pedro #Oscar
 # Exercicio # 9 a) - Cifra de vigenere  - DeCifra.
 
+
+        
 LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
@@ -18,7 +20,7 @@ def main() -> None:
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     modo = input("e. Encriptar\nd. Desencriptar\nEscolha uma Opção: ")
     mensagem = input("Inserir msg: ")
-    chave = input("Inserir chave [alfanumerica]: ")
+    chave = input("Inserir chave : ")
 
     if modo.lower().startswith("d"):
         modo = "encripta"

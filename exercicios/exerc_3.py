@@ -12,7 +12,7 @@ from string import ascii_uppercase #ascii_letters - maiusc
 """funcao encripta """
 def encrypt(mensagem, chave):
     """
-    Cifrar
+    Cifra
     c = (x + n) % 26
 
     Escolhe a chave secreta (posicao) neste caso o "n" para cada letra no texto simples, e
@@ -35,7 +35,7 @@ def encrypt(mensagem, chave):
 
    #alfabeto = ascii_letters # os 2
     alfabeto = ascii_uppercase
-   #alfabeto = ascii_lowercase
+   
 
     # resultado final da string
     result = ""
@@ -57,7 +57,7 @@ def encrypt(mensagem, chave):
 def decrypt(mensagem, chave):
 
     """
-    Descifrar
+    Decifra
     x = (c - n) % 26
 
     Parametros:
@@ -111,10 +111,11 @@ if __name__ == "__main__":
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|      Exercicio nº. 3 a) b) - opcao 1        |")
-        print("|              Cifra de Caesar                |")
+        print("|            Oscar | Pedro | Rui              |")
+        print("|                                             |")
+        print("|           Cifra de Caesar - Tool            |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print(*["1. Cifrar", "2. Decifrar", "3. Brute-Force" , "0. Sair"], sep="\n")
+        print(*["\033[37;40m1. Cifrar", "2. Decifrar", "3. Brute-Force" , "0. Sair"], sep="\n")
         # input do utilizador
         choice = input("Escolha uma opção: ").strip() or "0"
 

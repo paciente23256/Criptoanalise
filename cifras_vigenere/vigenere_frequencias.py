@@ -72,9 +72,10 @@ def decrypt(k,c):
     return "".join(dcr_msg)
 
 def main():
-    f=open('vig_input.txt','r')
-    c=f.read().replace(" ","").lower()
-
+    
+    #f=open('vig_input.txt','r')
+    #c=f.read().replace(" ","").lower()
+    c=input("Inserir cripto: ")
     max_guess=int(input("Guess the maximum key length:"))
     while (max_guess>len(c)):
         print("Invalid Guess ! Please try again.")
