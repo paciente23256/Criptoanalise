@@ -7,12 +7,6 @@ for i,ch in enumerate(alphabets):
     inv_alpha[i] = ch
   
 #input for key(a,b) and Plain text
-print("")
-print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-print("|       MESI2022 *CCA - Criptoanalise*        |")
-print("|            Oscar | Pedro | Rui              |")
-print("|  *Cifra de Affine - Decifra Força Bruta*    |")
-print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("NOTE:- Keys should be Relative prime i.e. gcd(a,b) = 1.")   #gcd stands for greatest common divisor.
 key = list(map(int, input("Enter key values a and b for key(a,b) :").split()))
 plain_text = input("Enter plain text (only letters): ").lower().replace(" ", "")
