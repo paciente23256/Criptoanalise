@@ -13,9 +13,9 @@ print("|       MESI2022 *CCA - Criptoanalise*        |")
 print("|            Oscar | Pedro | Rui              |")
 print("|  *Cifra de Affine - Decifra Força Bruta*    |")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-print("NOTE:- Keys should be Relative prime i.e. gcd(a,b) = 1.")   #gcd stands for greatest common divisor.
-key = list(map(int, input("Enter key values a and b for key(a,b) :").split()))
-plain_text = input("Enter plain text (only letters): ").lower().replace(" ", "")
+print("NOTA:- As chaves devem ser primos Relativos  i.e. gcd(a,b) = 1.")   #gcd stands for greatest common divisor.
+key = list(map(int, input("Inserir valor de Alpha e Beta para key(a,b) :").split()))
+plain_text = input("Inserir Texto (letras apenas): ").lower().replace(" ", "")
 
 encrypted = dict()
 for char in set(plain_text):
