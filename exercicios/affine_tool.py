@@ -73,7 +73,7 @@ def encrypt(input_str):
                     encrypt_temp = encrypt_temp.upper()
                     encrypt_list.append(encrypt_temp)
     encryptmsg=''.join(encrypt_list)
-    print('The encrypted message is ', encryptmsg)
+    print('A mensagem cifrada é: ', encryptmsg)
 
 
 def decrypt(input_str):
@@ -95,7 +95,7 @@ def decrypt(input_str):
                     decrypt_temp = alphabet_list[newvalue]
                     decrypt_list.append(decrypt_temp)
     decryptmsg=''.join(decrypt_list)
-    print('Menssagem Decifrada:  ', decryptmsg)
+    print('A Mensagem Decifrada é:  ', decryptmsg)
 
 
 

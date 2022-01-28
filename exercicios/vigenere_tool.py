@@ -4,7 +4,7 @@
 # Alunos #Rui #Pedro #Oscar
 # Cifra VIGENERE - tool
 
-#Alfabeto - strings maius.
+#Alfabeto - maiusculas
 
 from string import ascii_uppercase
 # Este módulo fornece acesso ao Unicode Character Database (UCD) que define as propriedades dos caracteres para todos os caracteres Unicode
@@ -18,7 +18,7 @@ VIGENERE
 
 class vigenere (object):
 
-  #Remover acentos e passa para maiuscula
+  #Remove acentos e passa para maiuscula
   def parse_msg(self, original):
     msg = unicodedata.normalize("NFD", original)
     msg = msg.encode("ascii", "ignore")
@@ -26,13 +26,13 @@ class vigenere (object):
     msg = self.maiusculo(msg)
     return msg
 
-  #Passar msg para maiusculo
+  #Passar msg para maiusculas
   def maiusculo(self, msg):
     msg = msg.upper()
 
     return msg
 
-  #Transcreve o msg com a palavra-chave
+  #Transcreve a msg com a palavra-chave
   def transcrever(self, msg, chave):
     tam_msg = len(msg)
     tam_chave = len(chave)
@@ -57,7 +57,7 @@ class vigenere (object):
     alfabeto = list(alfabeto)
     return alfabeto
 
-  #Montar tabela da cifra
+  #Monta a tabela da cifra
   def montar_tabela(self):
     tabula = []
     alfabeto = self.alfabeto()
@@ -202,9 +202,6 @@ class forca_bruta (object):
 MAIN MENU
 
 """
-
-
-# def main():
 cifra = vigenere()
 forca_bruta = forca_bruta()
 

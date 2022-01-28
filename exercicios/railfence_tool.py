@@ -195,7 +195,7 @@ def cipher_decryption():
     decryp_text = re.sub(r"\.", "", decryp_text)
 
 
-    print("MSg Desencriptada: {}".format(decryp_text))
+    print("Mensagem decifrada: {}".format(decryp_text))
 
 
 def main():
@@ -229,8 +229,7 @@ if __name__ == "__main__":
 # Alunos #Rui #Pedro #Oscar
 # Exercicio # 6 a) b) c) - Cifra Raifence
 
-"""modulo de expressoes regulares"""
-import re
+
 
 
 """
