@@ -52,7 +52,7 @@ if __name__ == "__main__":
         elif choice == "4":
             go_vigenere()
         elif choice == "5":
-            go_affine
+            go_affine()
         elif choice == "0":
             print("Adeus.")
             break
