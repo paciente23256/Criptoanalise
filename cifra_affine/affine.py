@@ -4,6 +4,9 @@ def main():
     for i in range (26):
         alpha.append (chr (97 + i))
     if input1 == 1:
+        #a = int (input("Inserir valor de Alpha: "))
+        #b = int (input("Inserir valor de Beta: "))
+        #pt = input ("Inserir a texto a cifrar: ")
         a, b, pt = int (input ("Enter A and B Keys, and plaintext\n> ")), int (input ("> ")), input ("> ")
         if check_input (a, b, pt):
             cipher = encrypt (a, b, pt, alpha)
@@ -12,7 +15,10 @@ def main():
             print ("Invalid Input")
         main ()
     elif input1 == 2:
-        a, b, ct = int (input ("Enter A and B Keys, and ciphertext\n> ")), int (input ("> ")), input ("> ")
+        a = int (input("Inserir valor de Alpha: "))
+        b = int(input("Inserir valor de Beta: "))
+        ct = input ("Inserir a texto a decifrar: ")
+        #a, b, ct = int (input ("Enter A and B Keys, and ciphertext\n> ")), int (input ("> ")), input ("> ")
         if check_input (a, b, ct):
             plaintext = decrypt (a, b, ct, alpha)
             print (plaintext)
