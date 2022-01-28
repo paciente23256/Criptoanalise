@@ -2,26 +2,19 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-"""
-MENU
-"""
+
 
 import runpy
 
 """atalhos"""
-
 def go_cesar():
         runpy.run_path('cesar_tool.py')
-
 def go_playfair():
         runpy.run_path('playfair_tool.py')
-
 def go_railfence():
         runpy.run_path('railfence_tool.py')
-
 def go_vigenere():
         runpy.run_path('vigenere_tool.py')
-
 def go_affine():
         runpy.run_path('affine_tool.py')
 
@@ -29,7 +22,7 @@ if __name__ == "__main__":
 
     while True:
         print("")
-        print("\033[37;40m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
         print("|            Oscar | Pedro | Rui              |")
         print("|                                             |")
@@ -41,7 +34,7 @@ if __name__ == "__main__":
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
         # executa as funcoes com base no input do utilizador
-        if choice not in ("1", "2", "3", "4", "0"):
+        if choice not in ("1", "2", "3", "4", "5", "0"):
             print(" ! ERRO. Escolha uma opção válida.")
         elif choice == "1":
             go_cesar()

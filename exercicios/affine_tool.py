@@ -8,7 +8,7 @@ import subprocess, runpy
 #import brutefoce from hack_affine
 
 def go_affine_bforce():
-        runpy.run_path('affine_b.py')
+    runpy.run_path('hack_affine.py')
         
 def chk_fact(number):
     divisor = number
@@ -149,11 +149,9 @@ while True:
             else:
                 print (' alpha variable should be in the range 1-26')
     elif choice == "3":
-        ct = input ("Enter ciphertext to use brute force\n ")
-        #bruteforce (ct, alpha)
+        go_affine_bforce()
         
     elif choice == "0":
         print("Adeus.")
         break
 
-#def main():
