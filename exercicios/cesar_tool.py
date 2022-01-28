@@ -8,7 +8,8 @@
 
 #from string import ascii_lowercase #ascii_letters - minusc.
 from string import ascii_uppercase #ascii_letters - maiusc
-import runpy
+import runpy, subprocess
+
 
 def go_freq():
     runpy.run_path('cesar_freq.py')
@@ -27,7 +28,7 @@ def encrypt(mensagem, chave):
 
    #alfabeto = ascii_letters # os 2
     alfabeto = ascii_uppercase
-   
+
     # resultado final da string
     result = ""
 
@@ -91,42 +92,44 @@ def brute_force(mensagem):
 
 if __name__ == "__main__":
 
-    while True:
-        print("")
-        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|            Oscar | Pedro | Rui              |")
-        print("|         *Cifra de Caesar - Tool*            |")
-        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print(*["\033[37;40m1. Cifrar", "2. Decifrar", "3. Brute-Force" , "4. Analise de Frequencias" , "0. Sair"], sep="\n")
-        # input do utilizador
-        choice = input("Escolha uma opção: ").strip() or "0"
+    subprocess.call('clear',shell=True)
 
-        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
+while True:
+    print("")
+    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+    print("|       MESI2022 *CCA - Criptoanalise*        |")
+    print("|            Oscar | Pedro | Rui              |")
+    print("|         *Cifra de Caesar - Tool*            |")
+    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+    print(*["\033[37;40m1. Cifrar", "2. Decifrar", "3. Brute-Force" , "4. Analise de Frequencias" , "0. Sair"], sep="\n")
+    # input do utilizador
+    choice = input("Escolha uma opção: ").strip() or "0"
 
-        # executa as funcoes com base no input do utilizador
-        if choice not in ("1", "2", "3", "4", "0"):
-            print(" ! ERRO. Escolha uma opção válida.")
-        elif choice == "1":
-            mensagem = input("+ Inserir msg a Encriptar: ").upper()
-            chave = int(input("+ Inserir Chave: ").strip())
+    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
-            print(encrypt(mensagem, chave))
-        elif choice == "2":
-            mensagem = input("+ Inserir msg a Desencriptar: ").upper()
-            chave = int(input("+ Inserir Chave: ").strip())
+    # executa as funcoes com base no input do utilizador
+    if choice not in ("1", "2", "3", "4", "0"):
+        print(" ! ERRO. Escolha uma opção válida.")
+    elif choice == "1":
+        mensagem = input("+ Inserir msg a Encriptar: ").upper()
+        chave = int(input("+ Inserir Chave: ").strip())
 
-            print(decrypt(mensagem, chave))
-        elif choice == "3":
-            mensagem = input("+ Inserir msg a Desencriptar [Força-Bruta]: ").upper()
-            brute_force_data = brute_force(mensagem)
+        print(encrypt(mensagem, chave))
+    elif choice == "2":
+        mensagem = input("+ Inserir msg a Desencriptar: ").upper()
+        chave = int(input("+ Inserir Chave: ").strip())
 
-            for chave, value in brute_force_data.items():
-                print(f"Chave: {chave} | Menssagem: {value}")
-                
-        elif choice == "4":
-            go_freq()
-    
-        elif choice == "0":
-            print("Adeus.")
-            break
+        print(decrypt(mensagem, chave))
+    elif choice == "3":
+        mensagem = input("+ Inserir msg a Desencriptar [Força-Bruta]: ").upper()
+        brute_force_data = brute_force(mensagem)
+
+        for chave, value in brute_force_data.items():
+            print(f"Chave: {chave} | Menssagem: {value}")
+
+    elif choice == "4":
+        go_freq()
+
+    elif choice == "0":
+        print("Adeus.")
+        break
