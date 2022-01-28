@@ -4,6 +4,12 @@
 # Alunos #Rui #Pedro #Oscar
 # Cifra PlayFair
 
+"""
+A cifra Playfair é uma substituição polialfabética em bloco bigrâmico (ou digrâmico). 
+Nesta substituição, as letras são tomadas duas a duas (bloco bigrâmico), de acordo com 
+regras aplicadas a uma grade de 5 por 5 que contém o alfabeto de cifra.
+"""
+
 alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
          'X', 'Y', 'Z']
 
@@ -21,12 +27,12 @@ def get_key():
     k = input().upper()
     key = []
     for char in k:
-        if char in alpha and char not in key:  # add the character to the matrix if it's valid and not already in the matrix
+        if char in alpha and char not in key:  # adicione o caracter à matriz se for válido e ainda não estiver na matriz
             key.append(char)
-        elif char == "J":  # handle the case when the letter J appears in the key
+        elif char == "J":  # lida com o caso quando a letra J aparece na chave
             key.append("I")
     for char in alpha:
-        if char not in key:  # add the rest of the alphahet not appearing in the key to the matrix
+        if char not in key:  # adicione o resto do alfabeto que não aparece na chave a matriz
             key.append(char)
     return key
 
@@ -42,14 +48,14 @@ Retorna: Retorna a matriz Playfair com a chave.
 def gen_matrix(key):
     matrix = []
     counter = 0
-    if key == '':  # create a blank matrix
+    if key == '':  # cria a matriz em branco
         for xcounter in xrange(5):
             x = []
             for ycounter in xrange(5):
                 x.append(alpha[counter])
                 counter += 1
             matrix.append(x)
-    else:  # create a keyed matrix
+    else:  # cria a matriz com a chave
         for xcounter in xrange(5):
             x = []
             for ycounter in xrange(5):

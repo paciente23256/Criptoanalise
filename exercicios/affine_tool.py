@@ -19,7 +19,7 @@ def chk_fact(number):
         divisor = remainder
         remainder = dividend % divisor
     if divisor != 1:
-        print ('Value of alpha cant be taken')
+        print ('O valor de alfa não pode ser obtido')
         quit()
     else:
         pass
@@ -30,17 +30,17 @@ def strcheck():
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         str = input('Enter the string to be encrypted: ')
         if str == "":
-            print ('String is blank, cannot encrypt')
+            print ('A msg não pode estar em branco')
             cont = ''
             while cont != 'X':
-                cont = input('Press Y or N to continue: ')
-                if cont.upper() == 'Y':
+                cont = input('Carregue  S or N para continuar: ')
+                if cont.upper() == 'S':
                     cont = 'X'
                 elif cont.upper() == 'N':
-                    cont = input('decryption cancelled')
+                    cont = input('Operação cancelada')
                     quit()
                 else:
-                    print('Invalid input')
+                    print('opcao invalida')
                     continue
         else:
             cont == "I"
@@ -95,7 +95,7 @@ def decrypt(input_str):
                     decrypt_temp = alphabet_list[newvalue]
                     decrypt_list.append(decrypt_temp)
     decryptmsg=''.join(decrypt_list)
-    print('The decrypted message is ', decryptmsg)
+    print('Menssagem Decifrada:  ', decryptmsg)
 
 
 
@@ -111,7 +111,7 @@ while True:
     print("|            Oscar | Pedro | Rui              |")
     print("|         *Cifra de Affine - Tool*            |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print(*["\033[37;40m1. cifrar", "2. decifrar", "3. Força-Bruta", "0. Sair"], sep="\n")
+    print(*["1. cifrar", "2. decifrar", "3. Força-Bruta", "0. Sair"], sep="\n")
     # input do utilizador
     choice = input("Escolha uma opção: ").strip() or "0"
 
@@ -125,8 +125,8 @@ while True:
         encrypt_list = list()
         input_str_list = list()
         cont = ''
-        a_var = int(input ('Enter the alpha variable: '))
-        b_var = int(input ('Enter the beta variable:  '))
+        a_var = int(input ('Inserir Valor de Alpha: '))
+        b_var = int(input ('Inserir Valor de Beta:  '))
         if a_var in range(1,26):
             if a_var != 26:
                 chk_fact(a_var)
@@ -138,8 +138,8 @@ while True:
         decrypt_list = list()
         input_str_list = list()
         cont = ''
-        a_var = int(input ('Enter the alpha variable: '))
-        b_var = int(input ('Enter the beta variable:  '))
+        a_var = int(input ('Inserir Valor de Alpha: '))
+        b_var = int(input ('Inserir Valor de Beta:  '))
         if a_var in range(1,26):
             if a_var != 26:
                 chk_fact(a_var)
@@ -147,7 +147,7 @@ while True:
                 input_str = input_str.lower()
                 decrypt(input_str)
             else:
-                print (' alpha variable should be in the range 1-26')
+                print (' O valor do alpha deve ser entre 1-26')
     elif choice == "3":
         go_affine_bforce()
         
