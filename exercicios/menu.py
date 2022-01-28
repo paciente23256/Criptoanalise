@@ -22,16 +22,19 @@ def go_railfence():
 def go_vigenere():
         runpy.run_path('vigenere_tool.py')
 
+def go_affine():
+        runpy.run_path('affine_tool.py')
 
 if __name__ == "__main__":
 
     while True:
         print("")
-        print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        print("\033[37;40m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
         print("|            Oscar | Pedro | Rui              |")
+        print("|                                             |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-        print(*["\033[37;40m1. Cifra de Cesar Tool", "2. Cifra PlayFair Tool", "3. Cifra RailFence Tool" , "4. Cifra Vigenere Tool" , "0. Sair"], sep="\n")
+        print(*["\033[37;40m1. Cifra de Cesar Tool", "2. Cifra PlayFair Tool", "3. Cifra RailFence Tool" , "4. Cifra Vigenere Tool", "5. Cifra Affine Tool" , "0. Sair"], sep="\n")
         # input do utilizador
         choice = input("Escolha uma opção: ").strip() or "0"
 
@@ -48,6 +51,8 @@ if __name__ == "__main__":
             go_railfence()
         elif choice == "4":
             go_vigenere()
+        elif choice == "5":
+            go_affine
         elif choice == "0":
             print("Adeus.")
             break
