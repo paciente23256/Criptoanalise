@@ -5,6 +5,7 @@
 # Cifra de cesar Tool (2 files)
 
 import subprocess, runpy
+#import brutefoce from hack_affine
 
 def go_affine_bforce():
         runpy.run_path('affine_b.py')
@@ -54,6 +55,13 @@ def moduloinverse(a_var):
         remainder = dividend % divisor
         multiple += 1
     return(multiple-1)
+
+"""
+
+C = [(P * a) + b] mod n        # C = Texto cifrado , P = Texto em Claro, n = 26 (comprimento dos carateres)
+P = [(C – b) * a^(-1) ] mod n  # (a,b) as 2 chaves usadas para a cifra Affine.
+
+"""
 
 def encrypt(input_str):
     for var in input_str:
@@ -141,7 +149,9 @@ while True:
             else:
                 print (' alpha variable should be in the range 1-26')
     elif choice == "3":
-        go_affine_bforce()
+        ct = input ("Enter ciphertext to use brute force\n ")
+        #bruteforce (ct, alpha)
+        
     elif choice == "0":
         print("Adeus.")
         break
