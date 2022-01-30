@@ -48,7 +48,7 @@ def cipher_encryption():
     #        print(coluna, end="")
     #    print("\n")
     #    # inner for
-    ### for
+    ## for
 
     # ordena as letras da msg em zig-zag na matriz
     row = 0
@@ -219,4 +219,5 @@ def main():
             break
     else:
         print("+ Opção ivalida")
-        main()
+
+main()
