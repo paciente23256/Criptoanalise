@@ -3,29 +3,31 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Cifra Affine Tool
+# Cifra Affine Tool - Forca Bruta
 
 import sys, time
 import os
 
-# This function calculates the modular inverse of a number
+# calcula o modulo inverso de um número
 def mod_inv (num, mod):
     for x in range(0,mod + 1):
         if ((num*x)%mod == 1):
             return x
-    sys.exit('[!!!] ERROR: modulo %d inverse of %d does not exists!' % (mod, num))
+        
+    sys.exit('ERRO!!: O modulo %d inverso de %d não existe!' % (mod, num))
 
-# Checking arguments
+# verifica arguments
 if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
-    sys.exit('excutar brute force a mes inserida' % sys.argv[0])
+    sys.exit('excutar brute force a msg inserida' % sys.argv[0])
 
-# Reading file and setting output file
+
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("|       MESI2022 *CCA - Criptoanalise*        |")
 print("|            Oscar | Pedro | Rui              |")
 print("|         *Cifra de Affine - Tool*            |")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("+ Ataque - Força Bruta")
+# criptograma
 msg = input('\n+ Inserir Mensagem/criptograma: ')
 # escreve ficheiro
 exploit = open('exploit.txt','w')
