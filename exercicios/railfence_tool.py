@@ -11,7 +11,7 @@ import re
 """
 Funcao de cifra
 
-Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos" (linhas)
+Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos" (vetores)
 sucessivos de uma grelha (matriz) imaginária, movendo-se para cima quando o trilho inferior
  é alcançado, para baixo novamente quando o trilho superior é alcançado e assim por diante até
  que todo o texto simples seja escrito. O texto cifrado é então lido em coluna.
@@ -27,7 +27,7 @@ Por exemplo, para criptografar a mensagem
 
 def cipher_encryption():
     msg = input("Inserir a msg: ")
-    rails = int(input("Inserir o numero de  trilhos (linhas): "))
+    rails = int(input("Inserir o numero de  trilhos (vetores): "))
 
     # remove espacos da msg
     msg = msg.replace(" ", "")
@@ -96,7 +96,7 @@ Funcao Descifra
 
 def cipher_decryption():
     msg = input("Inserir a msg: ")
-    rails = int(input("Inserir o numero de trilhos (linhas): "))
+    rails = int(input("Inserir o numero de trilhos (vetores): "))
 
     # removing white space from message
     msg = msg.replace(" ", "")
@@ -235,7 +235,7 @@ if __name__ == "__main__":
 """
 Funcao de cifra
 
-Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos" (linhas)
+Na cifra railfence, o texto simples é escrito diagonalmente para baixo em "trilhos" (vetores)
 sucessivos de uma grelha (matriz) imaginária, movendo-se para cima quando o trilho inferior
  é alcançado, para baixo novamente quando o trilho superior é alcançado e assim por diante até
  que todo o texto simples seja escrito. O texto cifrado é então lido em coluna.
@@ -251,7 +251,7 @@ Por exemplo, para criptografar a mensagem
 
 def cipher_encryption():
     msg = input("Inserir a msg: ")
-    rails = int(input("Inserir o numero de  trilhos (linhas): "))
+    rails = int(input("Inserir o numero de  trilhos (vetores): "))
 
     # remove espacos da msg
     msg = msg.replace(" ", "")
@@ -320,7 +320,7 @@ Funcao Descifra
 
 def cipher_decryption():
     msg = input("Inserir a msg: ")
-    rails = int(input("Inserir o numero de trilhos (linhas): "))
+    rails = int(input("Inserir o numero de trilhos (vectores): "))
 
     # removing white space from message
     msg = msg.replace(" ", "")
