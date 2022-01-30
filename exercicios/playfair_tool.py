@@ -256,9 +256,9 @@ def main():
 
         if opcao == "1":
             print ("\nMessagem Cifrada:")
-            print ("Inserir a mensagem a cifrar. \nSão apenas válidos carateres/letras de A-Z. \nOs períodos podem ser indicados com um X")
+            print ("Inserir a mensagem a cifrar. \nSão apenas válidos carateres/letras de A-Z. \nOs pontos serão trocados por um X.")
             message = get_message()
-            print ("The message you entered was: %s" % message)
+            print ("Mensagem Inserida: %s" % message)
             ciphertext = encrypt(message, m)
 
         elif opcao == "2":
