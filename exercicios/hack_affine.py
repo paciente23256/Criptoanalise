@@ -1,116 +1,64 @@
-import time, os, sys
-import math
-import re
 
-status = ''
-S = 'abcdefghijklmnopqrstuvwxyz'
-l = len (S)
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
+# Alunos #Rui #Pedro #Oscar
+# Cifra Affine Tool
 
+import sys, time
+import os
 
-# Functions
+# This function calculates the modular inverse of a number
+def mod_inv (num, mod):
+    for x in range(0,mod + 1):
+        if ((num*x)%mod == 1):
+            return x
+    sys.exit('[!!!] ERROR: modulo %d inverse of %d does not exists!' % (mod, num))
 
-def validate_status():
-    m = input ('Carregue S para continuar S/n:')
-    if m == 's':
-        outputFile = m
-        outputFile_status (outputFile)
-        st = '0'
-    elif m == '1':
-        outputFile = None
-        st = '1'
-    #return outputfile
-    return st, outputFile
+# Checking arguments
+if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
+    sys.exit('excutar brute force a mes inserida' % sys.argv[0])
 
+# Reading file and setting output file
+print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+print("|       MESI2022 *CCA - Criptoanalise*        |")
+print("|            Oscar | Pedro | Rui              |")
+print("|         *Cifra de Affine - Tool*            |")
+print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+print("+ Ataque - Força Bruta")
+msg = input('\n+ Inserir Mensagem/criptograma: ')
+# escreve ficheiro
+exploit = open('exploit.txt','w')
+exploit.write('*** Chaves Testadas ***\n');
+# tempo inicial
+timer = time.time ()
+# Brute force algorithm
+for i in range(0,26):
+    if (i%2 != 0) and (i != 13):
+        for j in range(0,26):
+            exploit.write('\n# Chave usada <%d,%d>\n# Mensagem : ' % (i,j))
+            inv = mod_inv(i,26)
+            for c in msg:
+                v = ord(c)
+                if (v >= 65) and (v <= 90):
+                    # maiusc.
+                    cip = ((v - 65 - j)*inv + 26)%26 + 65
+                elif (v >= 97) and (v <= 122):
+                    # minusc.
+                    cip = ((v - 97 - j)*inv + 26)%26 + 97
+                else:
+                    # outros caract
+                    cip = v
+                # decifra escreve no ficheiro o resultado               
+                
+                exploit.write('%c' % cip)
+                # tempo final
+                t = round (time.time () - timer, 2)
+               
+with open('exploit.txt', 'r') as log:
+     print(''.join(log.readlines()))
+     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+     print ('Tempo de processamento : %s ' % t)
+     print ('\n') 
+     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 
-def outputFile_status(title):
-    if os.path.lexists (title):
-        #print ('!! The file : %s already exist.You want to continue ? (Y)es or (N)o ? ' % (title))
-        response = input ('> ')
-        if not response.lower ().startswith ('y'):
-            sys.exit ()
-
-
-def writeFile(title, text):
-    oFile = open (title, 'a+')
-    oFile.write ("%s \n" % text)
-    oFile.close ()
-
-
-def makeKeys(k):
-    key1 = k // l
-    key2 = k % l
-    return (key1, key2)
-
-
-def egcd(A, B):
-    if A == 0:
-        return (B, 0, 1)
-    else:
-        g, y, x = egcd (B % A, A)
-        return (g, x - (B // A) * y, y)
-
-
-def modinv(a, m):
-    g, x, y = egcd (a, m)
-    if g != 1:
-        raise Exception ('modular inverse does not exist')
-    else:
-        return x % m
-
-
-def affine_dec(msg, k1, k2, l, status, oF):
-    inv_k1 = modinv (k1, l)
-    msg_decypted = ''
-    for c in msg:
-        if c in S:  # Only characters in 'S'
-            c_index = S.index (c)  # Character's index
-
-            c_dec_index = (c_index - k2) * inv_k1 % l
-
-            msg_decypted += S[c_dec_index]
-        else:
-            msg_decypted += c
-    if status == '0':
-        print ("# Alpha  :%s and Beta : %s => %s " % (k1, k2, msg_decypted))
-        writeFile (oF, msg_decypted)
-    return msg_decypted
-
-
-def hack_affine(msg, l, status, oF):
-    for k in range (l ** 2):
-        k1 = makeKeys (k)[0]
-        k2 = makeKeys (k)[1]
-        if math.gcd (k1, l) != 1:
-            continue
-        dec_msg = affine_dec (msg, k1, k2, l, status, oF)
-    return dec_msg
-
-# Main
-
-def Main():
-
-    print("")
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|            Oscar | Pedro | Rui              |")
-    print("|         *Cifra de Affine - Tool*            |")
-    print("| Ataque de Força Bruta  C = key1 * P + key2  |")
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    (status, outputFile) = validate_status ()  # outputFile
-    msg = input ('Inserir a mensagem: ')
-    print ('\n')
-    # Infos
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print ('Lista de Caracteres usados: %s ' % S)
-    print ('\n')
-    print ('A Mensagem inserida : %s ' % msg)
-    print ('\n')
-    print ('A processar ...')
-    timer = time.time ()
-    hack_affine (msg, l, status, outputFile)
-    t = round (time.time () - timer, 2)
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print ('Tempo de processamento : %s ' % t)
-    print ('\n')
-    print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")

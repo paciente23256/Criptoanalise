@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
-# Cifra de cesar Tool (2 files)
+# Cifra Affine Tool
 
 import subprocess, runpy
 #import brutefoce from hack_affine
