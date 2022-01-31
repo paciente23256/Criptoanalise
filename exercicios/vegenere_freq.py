@@ -8,7 +8,7 @@
 Tabela de frequencias  portuguesa - no qui-quadrado
 com duas variaveis (x,y)
 i=(xi,yi)
-N medidas de uma variável aleatória X. Em cada medida, 
+N medidas de uma variável aleatória X. Em cada medida,
 a variável X assume os valores x1, x2, ...,xN.
 
 K=(ksize,c)
@@ -54,15 +54,15 @@ def decrypt(k,c):
     dcr_msg=[chr(a+97) for a in dcr_msg_code]
     return "".join(dcr_msg)
 
-def main():
-    
+#def main():
+while True:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|             Exercicio nº. 13 a)             |")
     print("|              Cifra de Vigenere              |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-    
+
     c=input("+ Inserir msg cifrada: ")
     key_size=int(input("\n+ Inserir da chave [int]: "))
     print("+ Comprimento Chave inserida:",key_size)
@@ -72,7 +72,7 @@ def main():
     d_opt=input("\n+ Quer desencriptar o criptograma? (S/n)")
     while (d_opt!='s' and d_opt!='n'):
         print("Opção invalida!")
-        
+
     if d_opt=='s':
         msg=decrypt(k,c)
         print("\n+ Mensagem decifrada:\033[37;40m ",msg)
@@ -80,5 +80,5 @@ def main():
     else:
         exit()
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
