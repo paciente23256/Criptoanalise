@@ -18,7 +18,7 @@ def mod_inv (num, mod):
 
 # verifica arguments
 if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
-    sys.exit('excutar brute force a msg inserida' % sys.argv[0])
+    sys.exit('Excutar brute force a msg inserida' % sys.argv[0])
 
 
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
@@ -34,7 +34,7 @@ exploit = open('exploit.txt','w')
 exploit.write('*** Chaves Testadas ***\n');
 # tempo inicial
 timer = time.time ()
-# Brute force algorithm
+# Brute force algorito
 for i in range(0,26):
     if (i%2 != 0) and (i != 13):
         for j in range(0,26):

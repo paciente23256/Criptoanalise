@@ -83,7 +83,7 @@ def brute_force(mensagem):
     # Armazena todos as combinacoes
     brute_force_data = {}
 
-    # Percore todos as combinacoes
+    # Percore todos as combinacoes 
     for chave in range(1, len(alfabeto) + 1):
         # Descripta a mensagem e armazena os resultados em data
         brute_force_data[chave] = decrypt(mensagem, chave)
