@@ -223,7 +223,7 @@ while True:
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
     # executa as funcoes com base no input do utilizador
-    if choice not in ("1", "2", "3", "4", "0"):
+    if choice not in ("1", "2", "3", "4", "5", "0"):
 
         print(" ! ERRO. Escolha uma opção válida.")
 

@@ -1,10 +1,7 @@
-# The problem of this code is that it doesn't work with spaces and punctuation. Therefore, I included some plaintexts in files that can be used to test the code.
-# I tried my best to make it work with punctuation and spaces, but due to the lack of my programming skills, I did not succeed.
-# This is my first time writing a serious code in python and I used someone elses code as a reference and tried to understand the syntax. Please take it into consideration.
 
 from math import gcd
 from collections import Counter
-
+import subprocess
 
 def c2i(c, alphabet):
     return alphabet.index (c)
@@ -165,12 +162,17 @@ pt_freq = [0.1463, 0.0104, 0.0388, 0.0499, 0.1257, 0.0102, 0.0130,
 
 
 
+if __name__ == "__main__":
+    
+    subprocess.call('clear',shell=True)
+
+
 while True:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|    Analise de frequencias Vigenere          |")
+    print("|               METODO kASISKI                |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
-    
+
     YOURTEXTHERE = input("Introduza a mensagem cifrada: ")
     crack (YOURTEXTHERE, alpha, pt_freq)

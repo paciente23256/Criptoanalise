@@ -108,7 +108,6 @@ while True:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|            Oscar | Pedro | Rui              |")
     print("|         *Cifra de Affine - Tool*            |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print(*["1. cifrar", "2. decifrar", "3. Força-Bruta", "0. Sair"], sep="\n")
