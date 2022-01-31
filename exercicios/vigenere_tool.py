@@ -109,7 +109,7 @@ class vigenere (object):
 
 
 """
-FORCA BRUTA
+Ataque Vigenere
 """
 
 class ataque (object):
@@ -119,7 +119,7 @@ class ataque (object):
 
     #verifica o espaçamento de sequencias repetidas. Tamanho = 3
     for i in range(len(cifrado_norm)):
-      #pega 3 letras em sequencia
+      #Agarra 3 letras em sequencia
       if (i+2 < len(cifrado_norm)):
         sequencia = cifrado_norm[i] + cifrado_norm[i+1] + cifrado_norm[i+2]
 
