@@ -112,7 +112,7 @@ class vigenere (object):
 FORCA BRUTA
 """
 
-class forca_bruta (object):
+class ataque (object):
   def encontrar_espacamento(self, cifrado):
     cifrado_norm = self.remover_espaco_esp(cifrado)
     sequencia_espacamento = []
@@ -203,7 +203,7 @@ MAIN MENU
 
 """
 cifra = vigenere()
-forca_bruta = forca_bruta()
+ataque = ataque()
 
 while True:
     print("")
@@ -211,7 +211,7 @@ while True:
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|         *Cifra de Vigenere - Tool*          |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print(*["1. Cifrar", "2. Decifrar", "3. Brute-Force" , "0. Sair"], sep="\n")
+    print(*["1. Cifrar", "2. Decifrar", "3. Ataque Kasiski" , "0. Sair"], sep="\n")
     # input do utilizador
     choice = input("Escolha uma opção: ").strip() or "0"
 
@@ -237,10 +237,10 @@ while True:
         print(decifrado)
 
     elif choice =="3":
-        cifrado_atk = input("+ Inserir msg a cifrada: ")
-        sequencia_espacamento = forca_bruta.encontrar_espacamento(cifrado_atk)
-        qtd_fator = forca_bruta.obter_fatores(sequencia_espacamento)
-        tam_chave = forca_bruta.possiveis_tam_chave(qtd_fator)
+        cifrado_atk = input("+ Iniciar Ataque - > msg a cifrada: ")
+        sequencia_espacamento = ataque.encontrar_espacamento(cifrado_atk)
+        qtd_fator = ataque.obter_fatores(sequencia_espacamento)
+        tam_chave = ataque.possiveis_tam_chave(qtd_fator)
 
     elif choice == "0":
         print("Adeus.")
