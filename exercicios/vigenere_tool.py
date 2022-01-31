@@ -216,7 +216,7 @@ while True:
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|         *Cifra de Vigenere - Tool*          |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print(*["1. Cifrar", "2. Decifrar", "3. Frequencias", "4. chave posssiveis" ,"5. Kasiski" , "0. Sair"], sep="\n")
+    print(*["1. Cifrar", "2. Decifrar", "3. Frequencias", "4. Posssiveis Chaves" ,"5. Kasiski" , "0. Sair"], sep="\n")
     # input do utilizador
     choice = input("Escolha uma opção: ").strip() or "0"
 
