@@ -10,7 +10,12 @@ from string import ascii_uppercase
 # Este módulo fornece acesso ao Unicode Character Database (UCD) que define as propriedades dos caracteres para todos os caracteres Unicode
 import unicodedata
 #Expressores regurales
-import re
+import re, runpy
+
+
+def go_vegenere_freq():
+        runpy.run_path('vegenere_freq.py')
+  
 
 """
 VIGENERE
@@ -196,8 +201,6 @@ class ataque (object):
       print(fator[0], "-", percentual, "%")
     print("\n")
 
-
-
 """
 MAIN MENU
 
@@ -211,14 +214,14 @@ while True:
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|         *Cifra de Vigenere - Tool*          |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print(*["1. Cifrar", "2. Decifrar", "3. Ataque Kasiski" , "0. Sair"], sep="\n")
+    print(*["1. Cifrar", "2. Decifrar", "3. Frequencias", "4. Kasiski" , "0. Sair"], sep="\n")
     # input do utilizador
     choice = input("Escolha uma opção: ").strip() or "0"
 
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
     # executa as funcoes com base no input do utilizador
-    if choice not in ("1", "2", "3", "0"):
+    if choice not in ("1", "2", "3", "4", "0"):
 
         print(" ! ERRO. Escolha uma opção válida.")
 
@@ -235,9 +238,11 @@ while True:
         decifrado = cifra.decifrar_msg(cifrado, chave)
         print("\n+ Texto Decifrado:")
         print(decifrado)
-
     elif choice =="3":
-        cifrado_atk = input("+ Iniciar Ataque - > msg a cifrada: ")
+      go_vegenere_freq()
+      
+    elif choice =="4":
+        cifrado_atk = input("+ Iniciar Ataque -> msg cifrada: ")
         sequencia_espacamento = ataque.encontrar_espacamento(cifrado_atk)
         qtd_fator = ataque.obter_fatores(sequencia_espacamento)
         tam_chave = ataque.possiveis_tam_chave(qtd_fator)
