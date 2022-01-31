@@ -15,6 +15,7 @@ K=(ksize,c)
 
 """
 
+
 def get_qui_quadrado(s):
         s=s.lower()
         e_frq= [
@@ -64,8 +65,8 @@ while True:
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
     c=input("+ Inserir msg cifrada: ")
-    key_size=int(input("\n+ Inserir da chave [int]: "))
-    print("+ Comprimento Chave inserida:",key_size)
+    key_size=int(input("\n+ Inserir tamanho da chave [int]: "))
+    print("+ Chave inserida:",key_size)
     k=get_key(c,key_size)
     print("++ A Chave usada na Cifra: ",k.upper())
 
