@@ -59,12 +59,13 @@ def main():
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|  Analise frequencias  Cifra de Vigenere     |")
+    print("|             Exercicio nº. 13 a)             |")
+    print("|              Cifra de Vigenere              |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
     
     c=input("+ Inserir msg cifrada: ")
-    key_size=int(input("\n+ Inserir tamanho chave [int]: "))
-    print("+ Tamanho da Chave inserida:",key_size)
+    key_size=int(input("\n+ Inserir da chave [int]: "))
+    print("+ Comprimento Chave inserida:",key_size)
     k=get_key(c,key_size)
     print("++ A Chave usada na Cifra: ",k.upper())
 
@@ -79,5 +80,5 @@ def main():
     else:
         exit()
 
-
-main()
+if __name__ == '__main__':
+    main()
