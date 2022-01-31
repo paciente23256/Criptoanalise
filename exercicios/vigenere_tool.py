@@ -15,6 +15,8 @@ import re, runpy
 
 def go_vegenere_freq():
         runpy.run_path('vegenere_freq.py')
+def go_kasiski():
+        runpy.run_path('kasiski.py')
   
 
 """
@@ -214,7 +216,7 @@ while True:
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|         *Cifra de Vigenere - Tool*          |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-    print(*["1. Cifrar", "2. Decifrar", "3. Frequencias", "4. Kasiski" , "0. Sair"], sep="\n")
+    print(*["1. Cifrar", "2. Decifrar", "3. Frequencias", "4. chave posssiveis" ,"5. Kasiski" , "0. Sair"], sep="\n")
     # input do utilizador
     choice = input("Escolha uma opção: ").strip() or "0"
 
@@ -246,6 +248,9 @@ while True:
         sequencia_espacamento = ataque.encontrar_espacamento(cifrado_atk)
         qtd_fator = ataque.obter_fatores(sequencia_espacamento)
         tam_chave = ataque.possiveis_tam_chave(qtd_fator)
+    elif choice =="5":
+      go_kasiski()
+    
 
     elif choice == "0":
         print("Adeus.")

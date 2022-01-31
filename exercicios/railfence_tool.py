@@ -86,7 +86,7 @@ def cipher_encryption():
 
     # remove '.' do texto encriptado
     encryp_text = re.sub(r"\.", "", encryp_text)
-    print("Encrypted Text: {}".format(encryp_text))
+    print("Texto cifrado: {}".format(encryp_text))
 
 
 """

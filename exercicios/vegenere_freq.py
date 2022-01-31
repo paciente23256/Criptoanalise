@@ -60,8 +60,7 @@ while True:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|             Exercicio nº. 13 a)             |")
-    print("|              Cifra de Vigenere              |")
+    print("|    Analise de frequencias Vigenere          |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 
     c=input("+ Inserir msg cifrada: ")
