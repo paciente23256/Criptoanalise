@@ -2,8 +2,7 @@
 Unidade Curricular CCA -***Criptografia e Criptanalise Aplicadas - Criptanalise***
 
 
-Trabalho de Grupo - Exercicios em Python\
-Alunos : Óscar Barreira; Pedro Ferreira; Rui Ventura.
+Trabalho - Exercicios em Python\
 
 
 # Objectivos (requisitos):
