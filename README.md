@@ -1,4 +1,3 @@
-# Mestrado de Engenharia de Segurança Informática - IPBEJA 2021-2022
 Unidade Curricular CCA -***Criptografia e Criptanalise Aplicadas - Criptanalise***
 
 
