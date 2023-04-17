@@ -1,12 +1,12 @@
 ***Criptografia e Criptanalise Aplicadas - Criptanalise***
 
 
-Trabalho - Exercicios em Python\
+Exercicios em Python
 
 
 # Objectivos (requisitos):
-- Ver PDF
-- Ajuda - > https://inventwithpython.com/hacking/
+
+- book - > https://inventwithpython.com/hacking/
 
 
 # Criptoanálise
