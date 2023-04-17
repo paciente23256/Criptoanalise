@@ -1,4 +1,4 @@
-Unidade Curricular CCA -***Criptografia e Criptanalise Aplicadas - Criptanalise***
+***Criptografia e Criptanalise Aplicadas - Criptanalise***
 
 
 Trabalho - Exercicios em Python\
