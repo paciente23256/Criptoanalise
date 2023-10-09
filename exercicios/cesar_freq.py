@@ -43,7 +43,6 @@ except:
     print("|       MESI2022 *CCA - Criptoanalise*        |")
     print("|                                             |")
     print("|       Cifra de Caesar -  Frequencias        |") 
-    print("|                                             |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
 raw_ciphertext = input("+ Inserir A Chave Cifrada: ")
 raw_bruteforce = input("\n+ forca bruta?: n ")
