@@ -1,8 +1,6 @@
 
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
-# Alunos #Rui #Pedro #Oscar
 # Cifra Affine Tool - Forca Bruta
 
 import sys, time
@@ -23,7 +21,6 @@ if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
 
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("|       MESI2022 *CCA - Criptoanalise*        |")
-print("|            Oscar | Pedro | Rui              |")
 print("|         *Cifra de Affine - Tool*            |")
 print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 print("+ Ataque - Força Bruta")
