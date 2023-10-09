@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
-# Alunos #Rui #Pedro #Oscar
 # Cifra Affine Tool
 
 import subprocess, runpy
