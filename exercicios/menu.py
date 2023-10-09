@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
 # Alunos #Rui #Pedro #Oscar
 
 
@@ -24,7 +23,6 @@ if __name__ == "__main__":
         print("")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("|       MESI2022 *CCA - Criptoanalise*        |")
-        print("|            Oscar | Pedro | Rui              |")
         print("|                                             |")
         print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print(*["\033[37;40m1. Cifra de Cesar Tool", "2. Cifra PlayFair Tool", "3. Cifra RailFence Tool" , "4. Cifra Vigenere Tool", "5. Cifra Affine Tool" , "0. Sair"], sep="\n")
