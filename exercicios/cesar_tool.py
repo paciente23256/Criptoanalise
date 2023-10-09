@@ -98,7 +98,6 @@ while True:
     print("")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print("|       MESI2022 *CCA - Criptoanalise*        |")
-    print("|            Oscar | Pedro | Rui              |")
     print("|         *Cifra de Caesar - Tool*            |")
     print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     print(*["\033[37;40m1. Cifrar", "2. Decifrar", "3. Brute-Force" , "4. Analise de Frequencias" , "0. Sair"], sep="\n")
