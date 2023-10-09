@@ -4,7 +4,7 @@
 Exercicios em Python
 
 
-# Objectivos (requisitos):
+# Reference:
 
 - book - > https://inventwithpython.com/hacking/
 
