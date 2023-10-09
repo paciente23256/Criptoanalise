@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# IPBEJA - MESI-2021/2022 - CCA-Criptoanalise - Python
-# Alunos #Rui #Pedro #Oscar
 # Cifra de cesar Tool (2 files)
 
 """Alfabeto lowercase """
